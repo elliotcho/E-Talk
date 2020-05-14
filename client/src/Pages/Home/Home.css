@@ -1,0 +1,174 @@
+.Home .message{
+    max-width: 1000px;
+    font-family: 'Nunito';
+    color: white;
+}
+
+.Home .message h1{
+    position: relative;
+    top: -20px;
+    font-weight: bold;
+    color: silver;
+}
+
+.Home .message p{
+    position: relative;
+    top:-20px;
+}
+
+.Home .message ul{
+    position: relative;
+    top:-20px;
+    list-style-type: none;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.Home .message li{
+    padding: 10px;
+    color: silver;
+}
+
+.Home .message span{
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: #920d0d;
+}
+
+.Home form{
+    position: relative;
+    left: 10%;
+    top: -40px;
+    font-family: 'Verdana';
+    color: #cfc7c7;
+}
+
+.Home form input{
+    width: 80%;
+    height: 30px;
+    display: block;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.Home form button{
+    position: relative;
+    left: 27%;
+    border: none;
+    padding: 20px 30px;
+    font-size: 1.3em;
+    font-family:'Arial';
+    background:#41af41;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+.Home form button:hover{
+    box-shadow: 0 0 5px black;;
+}
+
+
+@media screen and (min-width: 515px){
+    .Home .message p{
+        font-size: 1.1em;
+    }
+
+    .Home .message li{
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 615px){
+    .Home .message p{
+        font-size: 1.3em;
+    }
+    
+    .Home form input{
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 715px){
+    .Home form input{
+        width: 65%;
+    }
+
+    .Home form{
+        left: 20%;
+    }
+
+    .Home form button{
+        left: 23%;
+    }
+}
+
+@media screen and (min-width: 915px){
+    .Home form{
+        left: 30%;
+    }
+
+    .Home form input{
+        width: 50%;
+    }
+
+    .Home form button{
+        left: 19%;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .Home .message{
+        position: relative;
+        left: 6%;
+    }
+}
+
+@media screen and (min-width: 1150px){
+    .Home .message{
+        left: 8%;
+    }
+
+    .Home .message p{
+        font-size: 1.4em;
+    }
+
+    .Home form{
+        left: 30%;
+    }
+
+    .Home form input{
+        width: 45%;
+    }
+
+    .Home form button{
+        left: 17%;
+    }
+}
+
+@media screen and (min-width: 1250px){
+    .Home .message{
+        left: 15%;
+    }
+
+    .Home form{
+        margin-top: 75px;
+        left: 33%;
+    }
+
+    .Home form input{
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1350px){
+    .Home form input{
+        width: 35%;
+    }
+
+    
+    .Home form button{
+        left: 13%;
+    }
+}
