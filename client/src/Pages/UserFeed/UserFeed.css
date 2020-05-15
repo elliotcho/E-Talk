@@ -1,0 +1,36 @@
+.UserFeed .UserPost{
+    position: relative;
+    left: 5%;
+}
+
+.UserFeed .UserPost textarea{
+    width: 90%;
+    height: 100px;
+    display: block;
+    overflow-y: scroll;
+    resize:none;
+    font-size: 18px;
+    font-family: 'Segoe UI';
+}
+
+.UserFeed .UserPost h2{
+    font-family: 'Nunito';
+    color: slategray;
+}
+
+.UserFeed .UserPost button{
+    width: 90%;
+    height: 50px;
+    position: relative;
+    top: 10px;
+    border: none;
+    font-size: 1.2em;
+    font-family:'Arial';
+    background: #41af41;
+    color: white;
+    cursor: pointer;
+}
+
+.UserFeed .UserPost button:hover{
+    box-shadow: 0 0 10px black;
+}

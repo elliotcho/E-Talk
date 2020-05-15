@@ -4,6 +4,10 @@ import LoginBox from './Components/LoginBox';
 import './Home.css';
 
 class Home extends Component{
+    componentDidMount(){
+        document.body.style.background='#5a535aee';
+    }
+
     render(){
         return(
             <div className='Home'>

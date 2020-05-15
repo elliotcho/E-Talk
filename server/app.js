@@ -83,6 +83,36 @@ app.post('/login', (req, res)=>{
     });
 });
 
+//handle user creating a post
+app.post('/createpost', (req, res)=>{
+    const newPost={
+        email: req.body.email,
+        firstName: req.body.firstName,
+        lastName:req.body.lastName,
+        date: new Date().toISOString().slice(0, 19).replace('T', ' '),
+        content: req.body.content
+    }
+
+    connection.query('INSERT INTO posts SET ?', newPost, (err)=>{
+        if(err){
+            console.log(err);
+        }
+
+        res.send('post added');
+    });
+});
+
+//get posts
+app.post('/getposts', (req, res)=>{
+    connection.query('SELECT * FROM posts', (err, rows)=>{
+        if(err){
+            console.log(err);
+        }
+
+        res.json(rows);
+    });
+});
+
 app.listen(3000);
 
 

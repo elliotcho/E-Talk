@@ -4,6 +4,10 @@ import SignupBox from './Components/SignupBox';
 import './Signup.css';
 
 class Signup extends Component{
+    componentDidMount(){
+        document.body.style.background='#5a535aee';
+    }
+
     render(){
         return(
            <div className='Signup'>
