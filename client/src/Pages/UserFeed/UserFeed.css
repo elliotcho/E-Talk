@@ -1,9 +1,9 @@
-.UserFeed .UserPost{
+.UserFeed .PostBox{
     position: relative;
     left: 5%;
 }
 
-.UserFeed .UserPost textarea{
+.UserFeed .PostBox textarea{
     width: 90%;
     height: 100px;
     display: block;
@@ -13,12 +13,12 @@
     font-family: 'Segoe UI';
 }
 
-.UserFeed .UserPost h2{
+.UserFeed .PostBox h2{
     font-family: 'Nunito';
-    color: slategray;
+    color: lightgray;
 }
 
-.UserFeed .UserPost button{
+.UserFeed .PostBox button{
     width: 90%;
     height: 50px;
     position: relative;
@@ -31,6 +31,21 @@
     cursor: pointer;
 }
 
-.UserFeed .UserPost button:hover{
+.UserFeed .PostBox button:hover{
     box-shadow: 0 0 10px black;
+}
+
+.UserFeed .Post{
+    margin-top: 10px;
+    padding: 10px;
+    background: white;
+    font-family: 'Nunito';
+}
+
+.UserFeed .Post h4{
+    color: gray;
+}
+
+.UserFeed .Post p{
+    font-family: 'Arial';
 }

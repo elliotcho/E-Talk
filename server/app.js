@@ -104,10 +104,14 @@ app.post('/createpost', (req, res)=>{
 
 //get posts
 app.post('/getposts', (req, res)=>{
-    connection.query('SELECT * FROM posts', (err, rows)=>{
+    connection.query('SELECT * FROM posts ORDER BY date DESC', (err, rows)=>{
         if(err){
             console.log(err);
         }
+
+        rows.forEach(row=>{
+            row.date=row.date.toLocaleString();
+        });
 
         res.json(rows);
     });

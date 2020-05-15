@@ -1,14 +1,40 @@
 import React, {Component} from 'react';
+import PostBox from './Components/PostBox'
+import Post from './Components/Post';
 import './UserFeed.css'
 
 class UserFeed extends Component{
     constructor(){
       super();
-      this.handleSubmit=this.handleSubmit.bind(this);
+      this.state={
+        posts:[
+          {
+            email: 'dummyemail',
+            firstName: 'dummyfirst',
+            lastName: 'dummylast',
+            date: 'dummydate',
+            content: 'dummycontent'
+          },
+          {
+            email: 'dummyemail',
+            firstName: 'dummyfirst',
+            lastName: 'dummylast',
+            date: 'dummydate',
+            content: 'dummycontent'
+          },
+          {
+            email: 'dummyemail',
+            firstName: 'dummyfirst',
+            lastName: 'dummylast',
+            date: 'dummydate',
+            content: 'dummycontent'
+          }
+        ]
+      }
     }
 
     componentDidMount(){
-      document.body.style.background='white';
+      document.body.style.background='#5a535aee';
 
       fetch('/getposts', {
         method: 'POST', 
@@ -20,48 +46,31 @@ class UserFeed extends Component{
         response.json()
       )
       .then(posts =>{
-        posts.forEach(post =>{
-          console.log(post);
+        this.setState({
+          posts: posts
         });
       });
     }
 
-    handleSubmit(e){
-      e.preventDefault();
-
-      const {email, firstName, lastName}=this.props.userInfo;
-      const content=e.target.content.value;
-
-      const data={
-          email: email,
-          firstName: firstName,
-          lastName: lastName,
-          content: content,
-      }
-
-      fetch('/createpost', {
-          method: 'POST', 
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-      }
-      ).then(response =>{
-        window.location.reload();
-      });
-  }
-
     render(){
+      const posts=this.state.posts.map(post=>
+          <Post firstName={post.firstName}
+                lastName={post.lastName}
+                date={post.date}
+                content={post.content}
+          />
+      );
+
       return(
           <div className='UserFeed'>
             <ul className='UserNavbar'>
             </ul>
 
-            <form className='UserPost' onSubmit={this.handleSubmit}>
-              <h2>What would you like to share?</h2>
-              <textarea minlength='1' maxlength='60000' name='content' required='true'/>
-              <button>Post</button>
-            </form>
+            <PostBox userInfo={this.props.userInfo}/>
+
+            <br/>
+
+            {posts}
           </div>
       )
     }
