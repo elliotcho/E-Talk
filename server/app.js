@@ -117,6 +117,17 @@ app.post('/getposts', (req, res)=>{
     });
 });
 
+//delete post
+app.post('/deletepost', (req, res)=>{
+    connection.query('DELETE FROM posts WHERE id =?', req.body.id, (err)=>{
+        if(err){
+            console.log(err);
+        }
+
+        res.json({msg: "Post deleted"});
+    });
+});
+
 app.listen(3000);
 
 

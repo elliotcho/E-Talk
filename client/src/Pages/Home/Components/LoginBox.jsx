@@ -63,9 +63,9 @@ class LoginBox extends Component{
                         value={this.state.email}
                         onChange={this.handleChange}
                         name='email' 
-                        required='true' 
-                        minlength='1' 
-                        maxlength='50'
+                        required={true} 
+                        minLength='1' 
+                        maxLength='50'
                     />
 
                     <label htmlFor='password'>Password</label>
@@ -73,9 +73,9 @@ class LoginBox extends Component{
                            value={this.state.password}
                            onChange={this.handleChange}
                            name='password' 
-                           required='true' 
-                           minlength='1' 
-                           maxlength='50'
+                           required={true}
+                           minLength='1' 
+                           maxLength='50'
                     />
 
                     <button>Login</button>

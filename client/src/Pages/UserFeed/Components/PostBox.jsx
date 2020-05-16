@@ -37,10 +37,10 @@ class PostBox extends Component{
                 <h2>What would you like to share?</h2>
 
                 <form onSubmit={this.handleSubmit}>
-                    <textarea minlength='1' 
-                              maxlength='60000' 
+                    <textarea minLength='1' 
+                              maxLength='60000' 
                               name='content' 
-                              required='true'
+                              required={true}
                     />
                     
                     <button>Post</button>

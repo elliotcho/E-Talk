@@ -75,9 +75,9 @@ class SignupBox extends Component{
                         value={this.state.firstName}
                         onChange={this.handleChange}
                         name='firstName' 
-                        required='true' 
-                        minlength='1' 
-                        maxlength='50'
+                        required={true} 
+                        minLength='1' 
+                        maxLength='50'
                 />
 
                 <label htmlFor='lastName'>Your last name here<span>*</span></label>
@@ -85,9 +85,9 @@ class SignupBox extends Component{
                         value={this.state.lastName}
                         onChange={this.handleChange}
                         name='lastName' 
-                        required='true' 
-                        minlength='1' 
-                        maxlength='50'
+                        required={true} 
+                        minLength='1' 
+                        maxLength='50'
                 />
 
                 <label htmlFor='email'>Your email here<span>*</span></label>
@@ -95,9 +95,9 @@ class SignupBox extends Component{
                         value={this.state.email}
                         onChange={this.handleChange}
                         name='email' 
-                        required='true' 
-                        minlength='1' 
-                        maxlength='50'
+                        required={true}
+                        minLength='1' 
+                        maxLength='50'
                 />
 
                 <label htmlFor='password'>Your password here<span>*</span></label>
@@ -105,9 +105,9 @@ class SignupBox extends Component{
                         value={this.state.password}
                         onChange={this.handleChange}
                         name='password' 
-                        required='true' 
-                        minlength='1' 
-                        maxlength='50'
+                        required={true} 
+                        minLength='1' 
+                        maxLength='50'
                 />
 
                 <label htmlFor='confirmPassword'>Confirm password<span>*</span></label>
@@ -115,9 +115,9 @@ class SignupBox extends Component{
                         value={this.state.confirmPassword}
                         onChange={this.handleChange}
                         name='confirmPassword' 
-                        required='true' 
-                        minlength='1' 
-                        maxlength='50'
+                        required={true} 
+                        minLength='1' 
+                        maxLength='50'
                 />
 
                 <button>Sign up for E-Talk</button>
