@@ -6,7 +6,9 @@ import './UserFeed.css'
 class UserFeed extends Component{
     constructor(){
       super();
+
       this.state={
+        userInfo: {}, 
         posts:[
           {
             id:1,
@@ -41,6 +43,22 @@ class UserFeed extends Component{
     componentDidMount(){
       document.body.style.background='#5a535aee';
 
+      if(JSON.stringify(this.props.userInfo) !== JSON.stringify({})){
+        this.setState({
+          userInfo: this.props.userInfo
+        }, ()=>{
+          window.localStorage.setItem('userInfo', JSON.stringify(this.state.userInfo));
+        });
+      }
+
+      else{
+        this.setState({
+          userInfo: JSON.parse(window.localStorage.getItem('userInfo'))
+        }, ()=>{
+          window.localStorage.setItem('userInfo', JSON.stringify(this.state.userInfo));
+        });
+      }
+    
       fetch('/getposts', {
         method: 'POST', 
         headers: {
@@ -89,7 +107,7 @@ class UserFeed extends Component{
       const posts=this.state.posts.map(post=>
           <Post 
                 id={post.id}
-                userEmail={this.props.userInfo.email}
+                userEmail={this.state.userInfo.email}
                 postEmail={post.email}
                 firstName={post.firstName}
                 lastName={post.lastName}
@@ -104,7 +122,7 @@ class UserFeed extends Component{
             <ul className='UserNavbar'>
             </ul>
 
-            <PostBox userInfo={this.props.userInfo}/>
+            <PostBox userInfo={this.state.userInfo}/>
 
             <br/>
 

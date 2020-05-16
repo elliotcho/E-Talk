@@ -17,7 +17,7 @@ function Post(props){
 
     return(
         <div className='Post'>
-            <h3>{props.firstName + "\t" + props.lastName} {deleteButton}</h3>
+            <h3>{props.firstName + " " + props.lastName} {deleteButton}</h3>
 
             <h5>{props.date.toLocaleString()}</h5>
             <p>
