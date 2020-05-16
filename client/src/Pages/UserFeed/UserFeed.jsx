@@ -64,6 +64,15 @@ class UserFeed extends Component{
 
       const posts=this.state.posts;   
 
+      for(let i=0;i<posts.length;i++){
+        if(id===posts[i].id){
+          posts.splice(i, 1);
+          break;
+        }
+      }
+
+      this.setState({posts: posts});
+
       fetch('/deletepost', {
         method: 'POST', 
         headers: {
@@ -73,12 +82,7 @@ class UserFeed extends Component{
       }
       ).then(response =>
         response.json()
-      )
-      .then(() =>{
-        posts.splice(posts.indexOf(id), 1);   
-      });
-      
-      this.setState({posts: posts});
+      );
     }
 
     render(){
