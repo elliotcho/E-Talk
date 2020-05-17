@@ -10,7 +10,7 @@ class UserFeed extends Component{
       this.state={
         userInfo: {}, 
         posts:[
-        /*  {
+          /*{
             id:1,
             email: 'dummyemail',
             firstName: 'dummyfirst',
@@ -106,6 +106,7 @@ class UserFeed extends Component{
     render(){
       const posts=this.state.posts.map(post=>
           <Post 
+                key={post.id}
                 id={post.id}
                 userEmail={this.state.userInfo.email}
                 postEmail={post.email}

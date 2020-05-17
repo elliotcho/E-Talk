@@ -1,4 +1,5 @@
 import React, {Component}from 'react';
+import {NavLink} from 'react-router-dom';
 
 class Post extends Component{
     constructor(){
@@ -106,7 +107,7 @@ class Post extends Component{
         }
 
         let {numLikes}=this.state;
-        let likesMsg;
+        let likesMsg="";
         let likeCursor;
 
         if(numLikes>=1){
@@ -130,8 +131,17 @@ class Post extends Component{
                     >
                             &hearts;
                     </button> 
-                    <div className='likesMsg' style={{cursor: likeCursor}}>{likesMsg}</div>
-                </div>
+                    <div className='likesMsg' style={{cursor: likeCursor}}>    
+                        {(likesMsg!=="") ? <NavLink 
+                                                exact to={{pathname: '/likedby',
+                                                           postId: id}}
+                                                className='likedByLink'
+                                            >
+                                                {likesMsg}
+                                            </NavLink> 
+                                            : null}
+                    </div>
+                </div>  
             </div>
         )
     }

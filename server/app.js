@@ -185,6 +185,16 @@ app.post('/handlelikes', (req, res)=>{
     }
 });
 
+app.post('/likedby', (req, res)=>{
+    connection.query('SELECT * FROM likes WHERE postId = ?', req.body.postId, (err, rows)=>{
+        if(err){
+            console.log(err);
+        }
+        
+        res.json(rows);
+    });
+});
+
 app.listen(3000);
 
 

@@ -3,7 +3,7 @@ body{
     overflow-x:hidden;
 }
 
-.HomeNavbar, .UserNavbar{
+.HomeNavbar, .UserNavbar, .ListNavbar{
     width: 100%;
     height: 70px;
     position: relative;
