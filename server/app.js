@@ -128,6 +128,63 @@ app.post('/deletepost', (req, res)=>{
     });
 });
 
+//handle likes
+app.post('/handlelikes', (req, res)=>{
+    if(req.body.action==='total'){
+        connection.query('SELECT * FROM likes WHERE postId =?', req.body.postId, (err, rows)=>{
+            if(err){
+                console.log(err);
+            }
+
+            const total=rows.length;
+
+            connection.query('SELECT * FROM likes WHERE postId = ? AND email = ?', [req.body.postId, req.body.userEmail] , (err, rows)=>{
+                if(err){
+                    console.log(err);
+                }
+                
+                res.json({
+                    total: total,
+                    userLiked: rows.length!==0
+                });
+            });
+        });
+    }
+
+    else if(req.body.action==='like'){
+        connection.query('SELECT * FROM users WHERE email =?' ,req.body.userEmail, (err, rows)=>{
+            if(err){
+                console.log(err);
+            }
+
+            const newLike={
+                postId: req.body.postId,
+                email: req.body.userEmail,
+                firstName: rows[0].firstName,
+                lastName: rows[0].lastName
+            }
+    
+            connection.query('INSERT INTO likes SET ?', newLike, (err)=>{
+                if(err){
+                    console.log(err);
+                }
+    
+                res.json({msg: 'post liked'});
+            });
+        });
+    }
+
+    else if(req.body.action==='unlike'){
+        connection.query('DELETE FROM likes WHERE postId = ? AND email = ?', [req.body.postId, req.body.userEmail], (err)=>{
+            if(err){
+                console.log(err);
+            }
+    
+            res.json({msg: "post unliked"});
+        });
+    }
+});
+
 app.listen(3000);
 
 

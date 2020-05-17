@@ -21,6 +21,7 @@
 .UserFeed .PostBox button{
     width: 90%;
     height: 50px;
+    margin-left: 3px;
     position: relative;
     top: 10px;
     border: none;
@@ -53,7 +54,7 @@
 
 .UserFeed .Post p{
     font-family: 'Arial';
-    font-size: 0.9em;
+    font-size: 1.1em;
 }
 
 .UserFeed .Post .delete{
@@ -72,5 +73,30 @@
 
 .UserFeed .Post .delete:hover{
     box-shadow: 0 0 5px lightgray;
+}
+
+.UserFeed .Post .likesContainer{
+    padding: 10px;
+}
+
+.UserFeed .Post .like{
+    position: absolute;
+    bottom: 5%;
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    border: none;
+    background: black;
+    outline: none;
+    cursor:pointer;
+}
+
+.UserFeed .Post .likesMsg{
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    font-size: 12px;
+    color: gray;
+    font-family: 'Segoe UI';
 }
 
