@@ -114,3 +114,43 @@ exports.likedBy= (connection)=> (req, res)=>{
         res.json(rows);
     });
 };
+
+exports.handleComments=(connection)=> (req,res )=>{
+    if(req.body.action==='total'){
+        connection.query('SELECT * FROM comments WHERE postId =?', req.body.postId, (err, rows)=>{
+            if(err){
+                console.log(err);
+            }
+
+            res.json({total: rows.length});
+        });
+    }
+
+    else if(req.body.action==='get'){
+        connection.query('SELECT * FROM comments WHERE postId =?', req.body.postId, (err, rows)=>{
+            if(err){
+                console.log(err);
+            }
+
+            res.json({comments: rows});
+        });
+    }
+
+    else if(req.body.action==='comment'){
+        const newComment={
+            postId: req.body.postId,
+            email: req.body.userEmail,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            content: req.body.content
+        }
+
+        connection.query('INSERT INTO comments SET ?', newComment, (err)=>{
+            if(err){
+                console.log(err);
+            }
+
+            res.json({msg: "success"});
+        });
+    }
+}

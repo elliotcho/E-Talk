@@ -6,11 +6,28 @@ class PostBox extends Component{
         this.handleSubmit=this.handleSubmit.bind(this);
     }
 
+    checkIfEmpty(s){
+        let split=s.split('\n');
+
+        let flag=true;
+
+        for(let i=0;i<split.length;i++){
+            if(split[i].length>0){
+                flag=false;
+                break;
+            }
+        }
+
+        return flag;
+    }
+
     handleSubmit(e){
         e.preventDefault();
   
         const {email, firstName, lastName}=this.props.userInfo;
         const content=e.target.content.value;
+        
+        if(this.checkIfEmpty(content)){return;}
   
         const data={
             email: email,
@@ -24,9 +41,7 @@ class PostBox extends Component{
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data),
         })
-        .then(() =>{
-          window.location.reload();
-        });
+        .then(() =>{window.location.reload();});
     }
 
     render(){

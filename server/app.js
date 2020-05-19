@@ -25,7 +25,8 @@ const {
     createPost,
     deletePost,
     handleLikes,
-    likedBy
+    likedBy,
+    handleComments
 } =require('./handlers/posts');
 
 app.get('/', (req, res)=>{
@@ -44,5 +45,8 @@ app.post('/deletepost', deletePost(connection));
 //handle likes
 app.post('/handlelikes', handleLikes(connection));
 app.post('/likedby', likedBy(connection));
+
+//handle comments
+app.post('/comments', handleComments(connection));
 
 app.listen(3000);

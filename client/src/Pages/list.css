@@ -33,6 +33,9 @@
     top: 85%;
     font-size: 18px;
     font-family: 'Segoe UI';
-    overflow-y:scroll;
     resize: none;
+}
+
+.commentList .commentCount{
+    cursor:pointer;
 }

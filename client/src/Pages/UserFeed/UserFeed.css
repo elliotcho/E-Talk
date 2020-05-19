@@ -142,7 +142,7 @@
 .commentSection .commentsListLink{
     margin-right: 20px;
     color: blue;
-    text-decoration: none;
+    cursor: pointer;
 }
 
 .commentSection .commentsListLink:hover{
