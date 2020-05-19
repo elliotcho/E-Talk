@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import HomeNavbar from '../../HomeNavbar';
+import EntryNavbar from '../Navbars/EntryNavbar';
 import SignupBox from './Components/SignupBox';
 import './Signup.css';
 
@@ -10,8 +10,8 @@ class Signup extends Component{
 
     render(){
         return(
-           <div className='Signup'>
-               <HomeNavbar/>           
+           <div>
+               <EntryNavbar/>           
                <SignupBox getUserInfo={this.props.getUserInfo}/>
            </div>
         )

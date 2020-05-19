@@ -120,7 +120,7 @@ class UserFeed extends Component{
 
       return(
           <div className='UserFeed'>
-            <ul className='UserNavbar'>
+            <ul className='Navbar'>
             </ul>
 
             <PostBox userInfo={this.state.userInfo}/>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import HomeNavbar from '../../HomeNavbar';
+import EntryNavbar from '../Navbars/EntryNavbar';
 import LoginMsg from './Components/LoginMsg'
 import LoginBox from './Components/LoginBox';
 import './Home.css';
@@ -12,7 +12,7 @@ class Home extends Component{
     render(){
         return(
             <div>
-                <HomeNavbar/>
+                <EntryNavbar/>
 
                 <LoginMsg/>
 
