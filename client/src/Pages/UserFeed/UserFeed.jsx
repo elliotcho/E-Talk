@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PostBox from './Components/PostBox'
-import Post from './Components/Post/Post';
+import Post from './Components/Post';
 import './UserFeed.css'
 
 class UserFeed extends Component{
@@ -10,7 +10,7 @@ class UserFeed extends Component{
       this.state={
         userInfo: {}, 
         posts:[
-          {
+          /*{
             id:1,
             email: 'dummyemail',
             firstName: 'dummyfirst',
@@ -33,7 +33,7 @@ class UserFeed extends Component{
             lastName: 'dummylast',
             date: 'dummydate',
             content: 'dummycontent'
-          }
+          }*/
         ]
       }
 
@@ -61,17 +61,10 @@ class UserFeed extends Component{
     
       fetch('/getposts', {
         method: 'POST', 
-        headers: {
-          'Content-Type': 'application/json',
-        }
+        headers: {'Content-Type': 'application/json'}
       }
-      ).then(response =>
-        response.json()
-      )
-      .then(posts =>{
-        this.setState({
-          posts: posts
-        });
+      ).then(response =>response.json())
+      .then(posts =>{this.setState({posts: posts});
       });
     }
 
@@ -93,14 +86,10 @@ class UserFeed extends Component{
 
       fetch('/deletepost', {
         method: 'POST', 
-        headers: {
-          'Content-Type': 'application/json',
-        }, 
+        headers: {'Content-Type': 'application/json',}, 
         body: JSON.stringify({id: id})
       }
-      ).then(response =>
-        response.json()
-      );
+      ).then(response =>response.json());
     }
 
     render(){

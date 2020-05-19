@@ -1,14 +1,14 @@
-.PostBox{
+.postBox{
     position: relative;
     left: 5%;
 }
 
-.PostBox h2{
+.postBox h2{
     font-family: 'Nunito';
     color: lightgray;
 }
 
-.PostBox textarea{
+.postBox textarea{
     width: 90%;
     height: 100px;
     display: block;
@@ -18,7 +18,7 @@
     font-family: 'Segoe UI';
 }
 
-.PostBox button{
+.postBox button{
     width: 90%;
     height: 50px;
     margin-left: 3px;
@@ -32,11 +32,11 @@
     cursor: pointer;
 }
 
-.PostBox button:hover{
+.postBox button:hover{
     box-shadow: 0 0 10px black;
 }
 
-.Post{
+.post{
     position: relative;
     margin-top: 10px;
     padding: 10px;
@@ -45,20 +45,20 @@
     font-family: 'Nunito';
 }
 
-.Post h3{
+.post h3{
     color: darkblue;
 }
 
-.Post h5{
+.post h5{
     color: gray;
 }
 
-.Post p{
+.post p{
     font-family: 'Arial';
     font-size: 1.1em;
 }
 
-.Post .delete{
+.post .delete{
     position: absolute;
     left: 90%;
     top: 17%;
@@ -72,7 +72,7 @@
     cursor: pointer;
 }
 
-.Post .delete:hover{
+.post .delete:hover{
     box-shadow: 0 0 5px lightgray;
 }
 
@@ -108,7 +108,7 @@
     color: gray;
 }
 
-.Post .comment{
+.commentSection .comment{
     position: absolute;
     left: 20%;
     bottom: 5%;
@@ -121,12 +121,12 @@
     cursor:pointer;
 }
 
-.Post .comment:hover{
+.commentSection .comment:hover{
     box-shadow: 0 0 5px lightgray;
 }
 
 
-.Post .commentCount{
+.commentSection .commentCount{
     position: absolute;
     right: 0%;
     top: 100%;
@@ -139,29 +139,12 @@
     background: lightblue;
 }
 
-.back{
-    position: absolute;
-    top: 23%;
-    left: 5%;
-    font-weight: bolder;
-    font-size: 30px;
-    color: white;
+.commentSection .commentsListLink{
+    margin-right: 20px;
+    color: blue;
     text-decoration: none;
 }
 
-.user{
-    padding: 20px;
-    margin-bottom: 10px;
-    font-family: 'Verdana';
-    background: white;
+.commentSection .commentsListLink:hover{
+    color: gray;
 }
-
-.header{
-    position: relative;
-    color: white;
-    font-family: 'Arial';
-    right: 20px;
-    top: 25px;
-}
-
-

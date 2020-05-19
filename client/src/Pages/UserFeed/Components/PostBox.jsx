@@ -24,14 +24,14 @@ class PostBox extends Component{
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data),
         })
-        .then(response =>{
+        .then(() =>{
           window.location.reload();
         });
     }
 
     render(){
         return(
-            <div className='PostBox'>
+            <div className='postBox'>
                 <h2>What would you like to share?</h2>
 
                 <form onSubmit={this.handleSubmit}>

@@ -18,12 +18,12 @@ function Post(props){
 
     if(userEmail===postEmail){
          deleteButton=<button className='delete' onClick={()=>{deletePost(id);}}>
-                        X
+                            X
                       </button>
     }
 
     return(
-        <div className='Post'>
+        <div className='post'>
             <h3>{firstName + " " + lastName} {deleteButton}</h3>
     
             <h5>{date.toLocaleString()}</h5>
@@ -32,7 +32,11 @@ function Post(props){
 
             <LikeSection id={id} userEmail={userEmail}/> 
 
-            <CommentSection id={id} userEmail={userEmail}/>
+            <CommentSection id={id} 
+                            userEmail={userEmail} 
+                            firstName={firstName}
+                            lastName={lastName}
+            />
         </div>
     )
 }

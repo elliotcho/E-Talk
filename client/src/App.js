@@ -3,8 +3,8 @@ import {HashRouter, Route} from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Signup from './Pages/Signup/Signup';
 import UserFeed from './Pages/UserFeed/UserFeed';
-import LikedByList from './Pages/UserFeed/Components/LikedByList';
-import CommentsList from './Pages/UserFeed/Components/CommentsList';
+import LikedByList from './Pages/LikedByList';
+import CommentsList from './Pages/CommentsList';
 import './App.css';
 
 

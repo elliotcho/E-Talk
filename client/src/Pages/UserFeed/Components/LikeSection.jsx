@@ -70,7 +70,7 @@ class LikeSection extends Component{
     }
 
     render(){
-        const {id} =this.props.id;
+        const {id} =this.props;
 
         let {numLikes}=this.state;
         let likesMsg="";

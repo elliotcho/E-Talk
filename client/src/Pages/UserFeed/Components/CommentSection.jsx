@@ -7,7 +7,12 @@ class CommentSection extends Component{
     }
 
     render(){
-        const {id}=this.props;
+        const data={
+            postId: this.props.id,
+            userEmail: this.props.userEmail,
+            firstName: this.props.firstName,
+            lastName: this.props.lastName 
+        }
 
         return(
             <div className='commentSection'>
@@ -17,7 +22,7 @@ class CommentSection extends Component{
 
                 <div className='commentCount'>
                     <div>    
-                     <NavLink exact to={{pathname: '/comments', postId: id}} className='likedByLink'>
+                     <NavLink exact to={{pathname: '/comments', ...data}} className='commentsListLink'>
                             128 Comments
                      </NavLink> 
                     </div>

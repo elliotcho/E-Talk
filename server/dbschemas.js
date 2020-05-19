@@ -9,7 +9,7 @@ const users={
 //foreign key (email) references users(email) on delete cascade
 const posts={
     id="int, auto increment, not null, primary key",
-    email: "varchar(50), not null, unique",
+    email: "varchar(50), not null",
     firstName: "varchar(50), not null",
     lastName:  "varchar(50), not null",
     date: "datetime, not null",
@@ -31,5 +31,6 @@ const comments={
     postId:"int, not null",
     email: "varchar(50), not null",
     firstName: "varchar(50) not null",
-    lastName: "varchar(50) not null"
+    lastName: "varchar(50) not null",
+    content: "text(8000) not null"
 }
