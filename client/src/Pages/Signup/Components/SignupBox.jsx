@@ -40,15 +40,11 @@ class SignupBox extends Component{
         fetch('/signup', {
             method: 'POST', 
             headers: {
-              'Content-Type': 'application/json',
-            },
+              'Content-Type': 'application/json'},
             body: JSON.stringify(data),
         }
-        ).then(response =>
-            response.json()
-        ).then(obj =>{
-            console.log(obj.msg);
-
+        ).then(response => response.json())
+        .then(obj =>{
             if(obj.msg==='success'){
                 this.props.getUserInfo(obj);
 
@@ -69,59 +65,64 @@ class SignupBox extends Component{
 
     render(){
         return(
-            <form onSubmit={this.handleSubmit}>
-                <label htmlFor='firstName'>Your first name here<span>*</span></label>
-                <input type ='text' 
-                        value={this.state.firstName}
-                        onChange={this.handleChange}
-                        name='firstName' 
-                        required={true} 
-                        minLength='1' 
-                        maxLength='50'
-                />
+            <div className='signupBox'>
+                <h1>Create your account</h1>
 
-                <label htmlFor='lastName'>Your last name here<span>*</span></label>
-                <input type ='text' 
-                        value={this.state.lastName}
-                        onChange={this.handleChange}
-                        name='lastName' 
-                        required={true} 
-                        minLength='1' 
-                        maxLength='50'
-                />
+                <form onSubmit={this.handleSubmit}>
+                    
+                    <label htmlFor='firstName'>Your first name here<span>*</span></label>
+                    <input type ='text' 
+                            value={this.state.firstName}
+                            onChange={this.handleChange}
+                            name='firstName' 
+                            required={true} 
+                            minLength='1' 
+                            maxLength='50'
+                    />
 
-                <label htmlFor='email'>Your email here<span>*</span></label>
-                <input type='email' 
-                        value={this.state.email}
-                        onChange={this.handleChange}
-                        name='email' 
-                        required={true}
-                        minLength='1' 
-                        maxLength='50'
-                />
+                    <label htmlFor='lastName'>Your last name here<span>*</span></label>
+                    <input type ='text' 
+                            value={this.state.lastName}
+                            onChange={this.handleChange}
+                            name='lastName' 
+                            required={true} 
+                            minLength='1' 
+                            maxLength='50'
+                    />
 
-                <label htmlFor='password'>Your password here<span>*</span></label>
-                <input type ='password' 
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                        name='password' 
-                        required={true} 
-                        minLength='1' 
-                        maxLength='50'
-                />
+                    <label htmlFor='email'>Your email here<span>*</span></label>
+                    <input type='email' 
+                            value={this.state.email}
+                            onChange={this.handleChange}
+                            name='email' 
+                            required={true}
+                            minLength='1' 
+                            maxLength='50'
+                    />
 
-                <label htmlFor='confirmPassword'>Confirm password<span>*</span></label>
-                <input type ='password' 
-                        value={this.state.confirmPassword}
-                        onChange={this.handleChange}
-                        name='confirmPassword' 
-                        required={true} 
-                        minLength='1' 
-                        maxLength='50'
-                />
+                    <label htmlFor='password'>Your password here<span>*</span></label>
+                    <input type ='password' 
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                            name='password' 
+                            required={true} 
+                            minLength='1' 
+                            maxLength='50'
+                    />
 
-                <button>Sign up for E-Talk</button>
-            </form>
+                    <label htmlFor='confirmPassword'>Confirm password<span>*</span></label>
+                    <input type ='password' 
+                            value={this.state.confirmPassword}
+                            onChange={this.handleChange}
+                            name='confirmPassword' 
+                            required={true} 
+                            minLength='1' 
+                            maxLength='50'
+                    />
+
+                    <button>Sign up for E-Talk</button>
+                </form>
+            </div>
         )
     }
 }

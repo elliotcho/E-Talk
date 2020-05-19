@@ -11,8 +11,7 @@ class Signup extends Component{
     render(){
         return(
            <div className='Signup'>
-               <HomeNavbar/>
-               <h1>Create your account</h1>
+               <HomeNavbar/>           
                <SignupBox getUserInfo={this.props.getUserInfo}/>
            </div>
         )

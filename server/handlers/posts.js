@@ -43,9 +43,10 @@ exports.deletePost = (connection) => (req, res)=>{
     });
 };
 
+//handle likes
 exports.handleLikes = (connection) => (req, res)=>{
     
-    //loading total number of likes for a post, and checking if a user liked a post or not
+    //loading the total number of likes for a post, and checking if a user liked a post or not
     if(req.body.action==='total'){
         connection.query('SELECT * FROM likes WHERE postId =?', req.body.postId, (err, rows)=>{
             if(err){

@@ -32,14 +32,11 @@ class LoginBox extends Component{
 
         fetch('/login', {
             method: 'POST', 
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data),
-        }
-        ).then(response =>
-            response.json()
-        ).then(obj =>{
+        })
+        .then(response =>response.json())
+        .then(obj =>{
             if(obj.msg==='success'){
                 this.props.getUserInfo(obj);
 
@@ -56,8 +53,9 @@ class LoginBox extends Component{
 
     render(){
         return(
-            <div>
+            <div className='loginBox'>
                 <form onSubmit={this.handleSubmit}>
+                    
                     <label htmlFor='email'>Email</label>
                     <input type='email' 
                         value={this.state.email}

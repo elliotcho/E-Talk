@@ -1,10 +1,10 @@
-.Signup h1{
+.signupBox h1{
     margin-left: 100px;
     font-family: 'Nunito';
     color: white;
 }
 
-.Signup form{
+.signupBox form{
     position: relative;
     display: inline-block;
     left: 10%;
@@ -13,13 +13,13 @@
     color: #cfc7c7;
 }
 
-.Signup form span{
+.signupBox span{
     color: red;
     font-size:1.3em;
     font-family:'Arial';
 }
 
-.Signup form input{
+.signupBox input{
     width: 190%;
     height: 30px;
     margin-bottom: 20px;
@@ -27,7 +27,7 @@
     font-weight: bold;
 }
 
-.Signup form button{
+.signupBox button{
     position: relative;
     left: 43%;
     top: 25px;
@@ -41,62 +41,57 @@
     cursor: pointer;
 }
 
-.Signup form button:hover{
+.signupBox button:hover{
     box-shadow: 0 0 5px black;;
 }
 
 @media screen and (min-width: 515px){
-    .Signup h1{
+    .signupBox h1{
         position: relative;
         margin-left: 0;
         left: 30%;
     }
 
-    .Signup form{
+    .signupBox form{
         left: 10%;
     }
 }
 
 @media screen and (min-width: 615px){
-    .Signup h1{
+    .signupBox h1{
         left: 30%;
     }
 
-    .Signup form{
+    .signupBox form{
         left: 20%;
     }
 }
 
 @media screen and (min-width: 715px){
-    .Signup form{
+    .signupBox form{
         left: 25%;
     }
 }
 
 @media screen and (min-width: 815px){
-    .Signup h1{
+    .signupBox h1{
         left: 35%;
     }
     
-    .Signup form{
+    .signupBox form{
         left: 30%;
     }
 }
 
 @media screen and (min-width: 1015px){
-    .Signup h1{
+    .signupBox h1{
         left: 40%;
     }
     
-    .Signup form{
+    .signupBox form{
         left: 35%;
     }
 }
 
-@media screen and (min-width: 1250px){
-    .Signup form button{
-        left: 49%;
-    }
-}
 
 
