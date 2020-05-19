@@ -24,3 +24,12 @@ const likes={
     firstName: "varchar(50) not null",
     lastName: "varchar(50) not null"
 }
+
+//foreign key(postId) references posts(id) on delete cascade
+const comments={
+    commentId:"int, auto increment, not null, primary key",
+    postId:"int, not null",
+    email: "varchar(50), not null",
+    firstName: "varchar(50) not null",
+    lastName: "varchar(50) not null"
+}

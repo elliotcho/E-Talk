@@ -4,6 +4,7 @@ import Home from './Pages/Home/Home';
 import Signup from './Pages/Signup/Signup';
 import UserFeed from './Pages/UserFeed/UserFeed';
 import LikedByList from './Pages/UserFeed/Components/LikedByList';
+import CommentsList from './Pages/UserFeed/Components/CommentsList';
 import './App.css';
 
 
@@ -33,6 +34,7 @@ class App extends React.Component{
 
           <Route exact path='/userfeed' render={()=><UserFeed userInfo={this.state.userInfo}/>}/>
           <Route exact path='/likedby' render={()=><LikedByList/>}/>
+          <Route exact path='/comments' render={()=><CommentsList/>}/>
         </div>
       </HashRouter>
     )

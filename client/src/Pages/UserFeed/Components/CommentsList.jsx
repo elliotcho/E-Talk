@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
 
-class LikedByList extends Component{
-    constructor(){
+class CommentsList extends Component{
+    /*constructor(){
         super();
         this.state={
             postId: -1,
@@ -45,28 +45,27 @@ class LikedByList extends Component{
         .then(users =>{
             this.setState({list: users});
         });
-    }
+    }*/
 
     render(){
-        const list=this.state.list.map(user =>{
+        /*const list=this.state.list.map(user =>{
             return(
                 <div className='user'>
                     <div>{user.firstName} {user.lastName}</div>
+                    <p>{user.content}</p>
                 </div>
             )
-        });
+        });*/
 
         return(
-            <div className='likedBy'>
+            <div className='commentsList'>
                 <ul className='Navbar'>
-                    <div className='header'>Post Liked By...</div>
+                    <div className='header'>Comments</div>
                     <li><NavLink exact to='/userfeed' className='back'>&larr;</NavLink></li>
                 </ul>
-
-                {list}
             </div>
         )
     }
 }
 
-export default withRouter(LikedByList);
+export default withRouter(CommentsList);

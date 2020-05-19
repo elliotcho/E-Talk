@@ -21,12 +21,10 @@ class PostBox extends Component{
   
         fetch('/createpost', {
             method: 'POST', 
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data),
-        }
-        ).then(response =>{
+        })
+        .then(response =>{
           window.location.reload();
         });
     }

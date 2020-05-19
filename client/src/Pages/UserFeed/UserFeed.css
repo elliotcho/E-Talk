@@ -1,9 +1,14 @@
-.UserFeed .PostBox{
+.PostBox{
     position: relative;
     left: 5%;
 }
 
-.UserFeed .PostBox textarea{
+.PostBox h2{
+    font-family: 'Nunito';
+    color: lightgray;
+}
+
+.PostBox textarea{
     width: 90%;
     height: 100px;
     display: block;
@@ -13,12 +18,7 @@
     font-family: 'Segoe UI';
 }
 
-.UserFeed .PostBox h2{
-    font-family: 'Nunito';
-    color: lightgray;
-}
-
-.UserFeed .PostBox button{
+.PostBox button{
     width: 90%;
     height: 50px;
     margin-left: 3px;
@@ -32,32 +32,33 @@
     cursor: pointer;
 }
 
-.UserFeed .PostBox button:hover{
+.PostBox button:hover{
     box-shadow: 0 0 10px black;
 }
 
-.UserFeed .Post{
+.Post{
     position: relative;
     margin-top: 10px;
     padding: 10px;
+    margin-bottom: 50px;
     background: white;
     font-family: 'Nunito';
 }
 
-.UserFeed .Post h3{
+.Post h3{
     color: darkblue;
 }
 
-.UserFeed .Post h5{
+.Post h5{
     color: gray;
 }
 
-.UserFeed .Post p{
+.Post p{
     font-family: 'Arial';
     font-size: 1.1em;
 }
 
-.UserFeed .Post .delete{
+.Post .delete{
     position: absolute;
     left: 90%;
     top: 17%;
@@ -71,15 +72,15 @@
     cursor: pointer;
 }
 
-.UserFeed .Post .delete:hover{
+.Post .delete:hover{
     box-shadow: 0 0 5px lightgray;
 }
 
-.UserFeed .Post .likesContainer{
+.likeSection{
     padding: 10px;
 }
 
-.UserFeed .Post .like{
+.likeSection .like{
     position: absolute;
     bottom: 5%;
     width: 20px;
@@ -91,7 +92,7 @@
     cursor:pointer;
 }
 
-.UserFeed .Post .likesMsg{
+.likeSection .likesMsg{
     position: absolute;
     bottom: 5%;
     left: 8%;
@@ -99,15 +100,46 @@
     font-family: 'Segoe UI';
 }
 
-.UserFeed .Post .likedByLink{
+.likeSection .likedByLink{
     text-decoration: none;
 }
 
-.UserFeed .Post .likedByLink:hover{
+.likeSection .likedByLink:hover{
     color: gray;
 }
 
-.likedBy .back{
+.Post .comment{
+    position: absolute;
+    left: 20%;
+    bottom: 5%;
+    font-size: 14px;
+    font-family: 'Segoe UI';
+    background: white;
+    color: grey;
+    border: none;
+    outline: none;
+    cursor:pointer;
+}
+
+.Post .comment:hover{
+    box-shadow: 0 0 5px lightgray;
+}
+
+
+.Post .commentCount{
+    position: absolute;
+    right: 0%;
+    top: 100%;
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 15px;
+    font-family:'Arial';
+    color:blue;
+    text-align: right;
+    background: lightblue;
+}
+
+.back{
     position: absolute;
     top: 23%;
     left: 5%;
@@ -117,14 +149,14 @@
     text-decoration: none;
 }
 
-.likedBy .user{
+.user{
     padding: 20px;
     margin-bottom: 10px;
     font-family: 'Verdana';
     background: white;
 }
 
-.likedBy .header{
+.header{
     position: relative;
     color: white;
     font-family: 'Arial';

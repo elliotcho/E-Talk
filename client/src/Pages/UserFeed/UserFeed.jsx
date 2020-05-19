@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PostBox from './Components/PostBox'
-import Post from './Components/Post';
+import Post from './Components/Post/Post';
 import './UserFeed.css'
 
 class UserFeed extends Component{
@@ -10,7 +10,7 @@ class UserFeed extends Component{
       this.state={
         userInfo: {}, 
         posts:[
-          /*{
+          {
             id:1,
             email: 'dummyemail',
             firstName: 'dummyfirst',
@@ -33,7 +33,7 @@ class UserFeed extends Component{
             lastName: 'dummylast',
             date: 'dummydate',
             content: 'dummycontent'
-          }*/
+          }
         ]
       }
 
