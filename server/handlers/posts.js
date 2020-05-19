@@ -48,21 +48,21 @@ exports.handleLikes = (connection) => (req, res)=>{
     
     //loading the total number of likes for a post, and checking if a user liked a post or not
     if(req.body.action==='total'){
-        connection.query('SELECT * FROM likes WHERE postId =?', req.body.postId, (err, rows)=>{
+        connection.query('SELECT * FROM likes WHERE postId =?', req.body.postId, (err, likes)=>{
             if(err){
                 console.log(err);
             }
 
-            const total=rows.length;
+            const total=likes.length;
 
-            connection.query('SELECT * FROM likes WHERE postId = ? AND email = ?', [req.body.postId, req.body.userEmail] , (err)=>{
+            connection.query('SELECT * FROM likes WHERE postId = ? AND email = ?', [req.body.postId, req.body.userEmail] , (err, rows)=>{
                 if(err){
                     console.log(err);
                 }
                 
                 res.json({
                     total: total,
-                    userLiked: total!==0
+                    userLiked: rows.length!==0
                 });
             });
         });
