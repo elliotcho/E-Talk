@@ -115,7 +115,10 @@ exports.likedBy= (connection)=> (req, res)=>{
     });
 };
 
+//handles comments
 exports.handleComments=(connection)=> (req,res )=>{
+
+    //finding the total number of comments for a post
     if(req.body.action==='total'){
         connection.query('SELECT * FROM comments WHERE postId =?', req.body.postId, (err, rows)=>{
             if(err){
@@ -126,6 +129,7 @@ exports.handleComments=(connection)=> (req,res )=>{
         });
     }
 
+    //getting all the comments for a post
     else if(req.body.action==='get'){
         connection.query('SELECT * FROM comments WHERE postId =?', req.body.postId, (err, rows)=>{
             if(err){
@@ -138,6 +142,7 @@ exports.handleComments=(connection)=> (req,res )=>{
         });
     }
 
+    //commenting on a post
     else if(req.body.action==='comment'){
         connection.query('SELECT * FROM USERS WHERE email = ?', req.body.userEmail,(err, rows)=>{
             const newComment={
@@ -156,6 +161,17 @@ exports.handleComments=(connection)=> (req,res )=>{
 
                 res.json({msg: "success"});
             });
+        });
+    }
+
+    //deleting a comment
+    else if(req.body.action==='delete'){
+        connection.query('DELETE FROM comments WHERE commentId =?', req.body.commentId, (err)=>{
+            if(err){
+                console.log(err);
+            }
+
+            res.json({msg: 'success'});
         });
     }
 }

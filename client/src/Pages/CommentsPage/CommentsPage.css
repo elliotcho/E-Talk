@@ -37,7 +37,7 @@
 
 .comment{
     position: relative;
-    height: 100px;
+    height: 150px;
     margin-top: 10px;
     padding: 5px;
     background: beige;
@@ -52,17 +52,38 @@
 
 .comment h5{
     position: absolute;
-    left: 85%;
+    top: 25%;
     display: inline;
+    margin-left: 2px;
+    font-family: 'Arial';
     color: gray;
 }
 
 .comment p{
     position: absolute;
-    top: 50%;
+    margin-left: 1px;
+    max-width: 90%;
+    top: 65%;
     font-family: 'Arial';
     margin-bottom: 5px;  
 }
 
+.comment .delete{
+    position: absolute;
+    top: 12%;
+    left: 92%;
+    border: none;
+    font-size: 20px;
+    font-weight:bolder;
+    font-family: 'Trebuchet MS';
+    color: red;
+    background: beige;
+    cursor: pointer;
+    outline: none;
+}
+
+.comment .delete:hover{
+    box-shadow: 0 0 5px lightgray;
+}
 
 
