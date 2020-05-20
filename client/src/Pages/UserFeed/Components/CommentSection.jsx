@@ -21,7 +21,7 @@ class CommentSection extends Component{
         fetch('/comments',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body:JSON.stringify({data})
+            body:JSON.stringify(data)
         }).then(response => response.json())
         .then(obj => {this.setState({numComments: obj.total})});
     }
@@ -32,8 +32,6 @@ class CommentSection extends Component{
             state:{
                 postId: this.props.id,
                 userEmail: this.props.userEmail,
-                firstName: this.props.firstName,
-                lastName: this.props.lastName
             }
         });
     }
@@ -45,6 +43,7 @@ class CommentSection extends Component{
 
         if(numComments>=1){
             commentsMsg=(numComments===1)? numComments + " comment": numComments + " comments";
+            styleCount={display: 'block'};
         }
 
         else{

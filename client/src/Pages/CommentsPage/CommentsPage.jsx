@@ -9,8 +9,6 @@ class CommentsPage extends Component{
         this.state={
             postId: -1,
             userEmail: "",
-            firstName: "",
-            lastName: "",
             list:[]
         }
 
@@ -77,7 +75,7 @@ class CommentsPage extends Component{
     handleSubmit(e){
         e.preventDefault();
 
-        const{postId, userEmail, firstName, lastName}=this.state;
+        const{postId, userEmail}=this.state;
         const content=e.target.content.value;
 
         if(this.checkIfEmpty(content)){return;}
@@ -86,8 +84,6 @@ class CommentsPage extends Component{
             action: 'comment',
             postId: postId,
             userEmail: userEmail,
-            firstName: firstName,
-            lastName: lastName,
             content: content
         }
 
@@ -105,6 +101,21 @@ class CommentsPage extends Component{
     }
 
     render(){
+        const comments=this.state.list.map(comment =>{
+            return(
+                <Comment 
+                    key={comment.commentId}
+                    commentId={comment.commentId}
+                    userEmail={this.state.userEmail}
+                    commentEmail={comment.email}
+                    firstName={comment.firstName}
+                    lastName={comment.lastName}
+                    date={comment.date}
+                    content={comment.content}
+                />
+            )
+        });
+
         return(
             <div className='commentsPage'>
                 <ul className='Navbar'>
@@ -112,7 +123,7 @@ class CommentsPage extends Component{
                     <li><NavLink exact to='/userfeed' className='back'>&larr;</NavLink></li>
                 </ul>
 
-                <Comment/>
+                {comments}
 
                 <form ref={element => this.myComment=element} onSubmit={this.handleSubmit}>
                     <textarea

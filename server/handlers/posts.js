@@ -98,7 +98,7 @@ exports.handleLikes = (connection) => (req, res)=>{
             if(err){
                 console.log(err);
             }
-    
+
             res.json({msg: "post unliked"});
         });
     }
@@ -139,21 +139,23 @@ exports.handleComments=(connection)=> (req,res )=>{
     }
 
     else if(req.body.action==='comment'){
-        const newComment={
-            postId: req.body.postId,
-            email: req.body.userEmail,
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            date: new Date().toISOString().slice(0, 19).replace('T', ' '),
-            content: req.body.content
-        }
-
-        connection.query('INSERT INTO comments SET ?', newComment, (err)=>{
-            if(err){
-                console.log(err);
+        connection.query('SELECT * FROM USERS WHERE email = ?', req.body.userEmail,(err, rows)=>{
+            const newComment={
+                postId: req.body.postId,
+                email: rows[0].email,
+                firstName: rows[0].firstName,
+                lastName: rows[0].lastName,
+                date: new Date().toISOString().slice(0, 19).replace('T', ' '),
+                content: req.body.content
             }
 
-            res.json({msg: "success"});
+            connection.query('INSERT INTO comments SET ?', newComment, (err)=>{
+                if(err){
+                    console.log(err);
+                }
+
+                res.json({msg: "success"});
+            });
         });
     }
 }
