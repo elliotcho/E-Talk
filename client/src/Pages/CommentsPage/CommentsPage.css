@@ -1,5 +1,6 @@
-.back{
+.Navbar .backButton{
     position: absolute;
+    z-index:1;
     top: 23%;
     left: 5%;
     font-weight: bolder;
@@ -8,14 +9,8 @@
     text-decoration: none;
 }
 
-.user{
-    padding: 20px;
-    margin-bottom: 10px;
-    font-family: 'Verdana';
-    background: white;
-}
 
-.header{
+.Navbar .commentsHeader{
     position: relative;
     color: white;
     font-family: 'Arial';

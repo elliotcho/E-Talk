@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
-import './list.css';
+import './LikesPage.css';
 
-class LikedByList extends Component{
+class LikesPage extends Component{
     constructor(){
         super();
         
@@ -57,10 +57,10 @@ class LikedByList extends Component{
         });
 
         return(
-            <div className='likedBy'>
+            <div className='likesPage'>
                 <ul className='Navbar'>
-                    <div className='header'>Post Liked By...</div>
                     <li><NavLink exact to='/userfeed' className='back'>&larr;</NavLink></li>
+                    <div className='likesHeader'>Post Liked By...</div>
                 </ul>
 
                 {list}
@@ -69,4 +69,4 @@ class LikedByList extends Component{
     }
 }
 
-export default withRouter(LikedByList);
+export default withRouter(LikesPage);

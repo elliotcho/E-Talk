@@ -4,7 +4,8 @@ import Home from './Pages/Home/Home';
 import Signup from './Pages/Signup/Signup';
 import UserFeed from './Pages/UserFeed/UserFeed';
 import CommentsPage from './Pages/CommentsPage/CommentsPage';
-import LikedByList from './Pages/LikedByList';
+import LikesPage from './Pages/LikesPage/LikesPage';
+import Profile from './Pages/Profile/Profile';
 import './App.css';
 
 
@@ -33,8 +34,10 @@ class App extends React.Component{
           <Route exact path='/signup' render={()=><Signup getUserInfo={this.getUserInfo}/>}/>
 
           <Route exact path='/userfeed' render={()=><UserFeed userInfo={this.state.userInfo}/>}/>
-          <Route exact path='/likedby' render={()=><LikedByList/>}/>
+          <Route exact path='/likedby' render={()=><LikesPage/>}/>
           <Route exact path='/comments' render={()=><CommentsPage/>}/>
+          
+          <Route exact path='/profile' render={()=><Profile/>}/>
         </div>
       </HashRouter>
     )

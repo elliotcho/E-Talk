@@ -27,6 +27,8 @@ function Comment(props){
 }
 
 function handleClick(commentId){
+    if(!window.confirm("Are you sure you want to delete this comment?")){return;}
+
     const data={
         action: 'delete',
         commentId: commentId

@@ -119,8 +119,8 @@ class CommentsPage extends Component{
         return(
             <div className='commentsPage'>
                 <ul className='Navbar'>
-                    <div className='header'>Comments</div>
-                    <li><NavLink exact to='/userfeed' className='back'>&larr;</NavLink></li>
+                    <li><NavLink exact to='/userfeed' className='backButton'>&larr;</NavLink></li>
+                    <div className='commentsHeader'>Comments</div>
                 </ul>
 
                 {comments}

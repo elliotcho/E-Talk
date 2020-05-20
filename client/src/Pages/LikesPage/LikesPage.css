@@ -1,0 +1,25 @@
+.Navbar .back{
+    position: absolute;
+    z-index:1;
+    top: 23%;
+    left: 5%;
+    font-weight: bolder;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.Navbar .likesHeader{
+    position: relative;
+    color: white;
+    font-family: 'Arial';
+    right: 20px;
+    top: 25px;
+}
+
+.likesPage .user{
+    padding: 20px;
+    margin-bottom: 10px;
+    font-family: 'Verdana';
+    background: white;
+}
