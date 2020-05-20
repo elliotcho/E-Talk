@@ -1,0 +1,37 @@
+.back{
+    position: absolute;
+    top: 23%;
+    left: 5%;
+    font-weight: bolder;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.user{
+    padding: 20px;
+    margin-bottom: 10px;
+    font-family: 'Verdana';
+    background: white;
+}
+
+.header{
+    position: relative;
+    color: white;
+    font-family: 'Arial';
+    right: 20px;
+    top: 25px;
+}
+
+.commentsPage textarea{
+    position: absolute;
+    width: 90%;
+    height: 70px;
+    left: 5%;
+    top: 85%;
+    font-size: 18px;
+    font-family: 'Segoe UI';
+    resize: none;
+}
+
+

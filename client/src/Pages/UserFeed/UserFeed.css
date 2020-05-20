@@ -108,7 +108,7 @@
     color: gray;
 }
 
-.commentSection .comment{
+.commentSection .commentButton{
     position: absolute;
     left: 20%;
     bottom: 5%;
@@ -121,7 +121,7 @@
     cursor:pointer;
 }
 
-.commentSection .comment:hover{
+.commentSection .commentButton:hover{
     box-shadow: 0 0 5px lightgray;
 }
 

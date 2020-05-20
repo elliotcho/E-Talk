@@ -3,8 +3,8 @@ import {HashRouter, Route} from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Signup from './Pages/Signup/Signup';
 import UserFeed from './Pages/UserFeed/UserFeed';
+import CommentsPage from './Pages/CommentsPage/CommentsPage';
 import LikedByList from './Pages/LikedByList';
-import CommentsList from './Pages/CommentsList';
 import './App.css';
 
 
@@ -34,7 +34,7 @@ class App extends React.Component{
 
           <Route exact path='/userfeed' render={()=><UserFeed userInfo={this.state.userInfo}/>}/>
           <Route exact path='/likedby' render={()=><LikedByList/>}/>
-          <Route exact path='/comments' render={()=><CommentsList/>}/>
+          <Route exact path='/comments' render={()=><CommentsPage/>}/>
         </div>
       </HashRouter>
     )

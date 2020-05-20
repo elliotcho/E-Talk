@@ -53,7 +53,7 @@ class CommentSection extends Component{
 
         return(
             <div className='commentSection'>
-                <button className='comment' onClick={this.handleClick}>
+                <button className='commentButton' onClick={this.handleClick}>
                      Comment
                 </button> 
 

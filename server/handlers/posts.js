@@ -132,6 +132,8 @@ exports.handleComments=(connection)=> (req,res )=>{
                 console.log(err);
             }
 
+            rows.forEach(row=>{row.date=row.date.toLocaleString();});
+
             res.json({comments: rows});
         });
     }
@@ -142,6 +144,7 @@ exports.handleComments=(connection)=> (req,res )=>{
             email: req.body.userEmail,
             firstName: req.body.firstName,
             lastName: req.body.lastName,
+            date: new Date().toISOString().slice(0, 19).replace('T', ' '),
             content: req.body.content
         }
 

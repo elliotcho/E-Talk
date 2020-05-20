@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
-import './list.css';
+import Comment from './Components/Comment';
+import './CommentsPage.css';
 
-class CommentsList extends Component{
+class CommentsPage extends Component{
     constructor(){
         super();
         this.state={
@@ -105,11 +106,13 @@ class CommentsList extends Component{
 
     render(){
         return(
-            <div className='commentsList'>
+            <div className='commentsPage'>
                 <ul className='Navbar'>
                     <div className='header'>Comments</div>
                     <li><NavLink exact to='/userfeed' className='back'>&larr;</NavLink></li>
                 </ul>
+
+                <Comment/>
 
                 <form ref={element => this.myComment=element} onSubmit={this.handleSubmit}>
                     <textarea
@@ -125,4 +128,4 @@ class CommentsList extends Component{
     }
 }
 
-export default withRouter(CommentsList);
+export default withRouter(CommentsPage);
