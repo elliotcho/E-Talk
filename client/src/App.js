@@ -37,7 +37,7 @@ class App extends React.Component{
           <Route exact path='/likedby' render={()=><LikesPage/>}/>
           <Route exact path='/comments' render={()=><CommentsPage/>}/>
           
-          <Route exact path='/profile' render={()=><Profile/>}/>
+          <Route exact path='/profile' render={()=><Profile userInfo={this.state.userInfo}/>}/>
         </div>
       </HashRouter>
     )

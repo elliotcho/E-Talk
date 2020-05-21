@@ -15,8 +15,6 @@ class LikesPage extends Component{
     }
 
     componentDidMount(){
-        document.body.style.background='#5a535aee';
-
         const {postId}=this.props.location;
 
         if(typeof postId!== 'undefined'){

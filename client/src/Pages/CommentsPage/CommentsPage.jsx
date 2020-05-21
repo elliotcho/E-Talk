@@ -18,8 +18,6 @@ class CommentsPage extends Component{
     }
 
     componentDidMount(){
-        document.body.style.background='#5a535aee';
-
         if(typeof this.props.location.state!== 'undefined'){
             this.setState({
                 postId: this.props.location.state.postId,

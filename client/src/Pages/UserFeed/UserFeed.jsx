@@ -3,6 +3,8 @@ import PostBox from './Components/PostBox'
 import Post from './Components/Post';
 import './UserFeed.css'
 
+import {NavLink} from 'react-router-dom';
+
 class UserFeed extends Component{
     constructor(){
       super();
@@ -110,6 +112,7 @@ class UserFeed extends Component{
       return(
           <div className='UserFeed'>
             <ul className='Navbar'>
+              <NavLink exact to='/profile'>Profile</NavLink>
             </ul>
 
             <PostBox userInfo={this.state.userInfo}/>

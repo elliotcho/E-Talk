@@ -70,7 +70,7 @@ class SignupBox extends Component{
 
                 <form onSubmit={this.handleSubmit}>
                     
-                    <label htmlFor='firstName'>Your first name here<span>*</span></label>
+                    <label>Your first name here<span>*</span></label>
                     <input type ='text' 
                             value={this.state.firstName}
                             onChange={this.handleChange}
@@ -80,7 +80,7 @@ class SignupBox extends Component{
                             maxLength='50'
                     />
 
-                    <label htmlFor='lastName'>Your last name here<span>*</span></label>
+                    <label>Your last name here<span>*</span></label>
                     <input type ='text' 
                             value={this.state.lastName}
                             onChange={this.handleChange}
@@ -90,7 +90,7 @@ class SignupBox extends Component{
                             maxLength='50'
                     />
 
-                    <label htmlFor='email'>Your email here<span>*</span></label>
+                    <label>Your email here<span>*</span></label>
                     <input type='email' 
                             value={this.state.email}
                             onChange={this.handleChange}
@@ -100,7 +100,7 @@ class SignupBox extends Component{
                             maxLength='50'
                     />
 
-                    <label htmlFor='password'>Your password here<span>*</span></label>
+                    <label>Your password here<span>*</span></label>
                     <input type ='password' 
                             value={this.state.password}
                             onChange={this.handleChange}
@@ -110,7 +110,7 @@ class SignupBox extends Component{
                             maxLength='50'
                     />
 
-                    <label htmlFor='confirmPassword'>Confirm password<span>*</span></label>
+                    <label>Confirm password<span>*</span></label>
                     <input type ='password' 
                             value={this.state.confirmPassword}
                             onChange={this.handleChange}

@@ -56,7 +56,7 @@ class LoginBox extends Component{
             <div className='loginBox'>
                 <form onSubmit={this.handleSubmit}>
                     
-                    <label htmlFor='email'>Email</label>
+                    <label>Email</label>
                     <input type='email' 
                         value={this.state.email}
                         onChange={this.handleChange}
@@ -66,7 +66,7 @@ class LoginBox extends Component{
                         maxLength='50'
                     />
 
-                    <label htmlFor='password'>Password</label>
+                    <label>Password</label>
                     <input type ='password' 
                            value={this.state.password}
                            onChange={this.handleChange}
