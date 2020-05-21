@@ -7,7 +7,7 @@ class ProfileImage extends Component{
 
         this.state={
             imageURL: '',
-            styleImage: {display: 'none'}
+            styleImage: {display: 'none'},
         }
 
         this.handleChange=this.handleChange.bind(this);
@@ -15,10 +15,43 @@ class ProfileImage extends Component{
         this.handleMouseOver=this.handleMouseOver.bind(this);
     }
 
+    componentDidMount(){
+        this.setState({
+            imageURL: ''
+        }, ()=>{
+            const data={
+                action: 'load',
+                email: this.props.email
+            }
+
+            fetch('/profilepic', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(response => response.json())
+            .then(obj =>{
+                this.setState({imageURL: obj.url});
+            });
+        });
+    }
+
     handleChange(e){
         this.setState({
             imageURL: URL.createObjectURL(e.target.files[0])
+        }, ()=>{
+            const data={
+                action: 'update',
+                imageFile: this.state.imageURL,
+                email: this.props.email
+            }
+
+            fetch('/profilepic', {
+               method: 'POST',
+               headers: {'Content-Type': 'application/json'},
+               body: JSON.stringify(data)
+            }).then(response => response.json());
         });
+
     }
 
     handleMouseOut(){
@@ -38,7 +71,7 @@ class ProfileImage extends Component{
 
     render(){
         let image;
-        let styleForUpdate;
+        let styleForUpdate = {display: 'block'};
    
         if(this.state.imageURL!==''){
             image=<div 
@@ -57,10 +90,6 @@ class ProfileImage extends Component{
                   </div>;
 
             styleForUpdate={display: 'none'};
-        }
-
-        else{
-            styleForUpdate={display: 'block'};
         }
 
         return(

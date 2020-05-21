@@ -17,7 +17,8 @@ app.use(express.static('../client/build'));
 
 const {
     signup,
-    login
+    login,
+    handleProfilePic
     } =require('./handlers/users');
 
 const {
@@ -48,5 +49,8 @@ app.post('/likedby', likedBy(connection));
 
 //handle comments
 app.post('/comments', handleComments(connection));
+
+//handle profile pic
+app.post('/profilepic', handleProfilePic(connection));
 
 app.listen(3000);

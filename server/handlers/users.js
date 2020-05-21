@@ -60,3 +60,34 @@ exports.signup = (connection) => (req, res)=>{
         }
     }); 
 };
+
+exports.handleProfilePic=(connection)=>(req, res)=>{
+    if(req.body.action==='load'){
+        connection.query('SELECT * FROM users WHERE email = ?', req.body.email, (err, rows)=>{
+            if(err){
+                console.log(err);
+            }
+
+            const data={
+                msg: 'Success',
+                url: ''
+            }
+
+            if(rows[0].profilePic!==null){
+                data.url=rows[0].profilePic;
+            }
+
+            res.json(data);
+        });
+    }
+
+    else if(req.body.action==='update'){
+        connection.query('UPDATE users SET profilePic= ? WHERE email = ?', [req.body.imageFile, req.body.email], (err)=>{
+            if(err){
+                console.log(err);
+            }
+
+            res.json({msg: 'Success'});
+        });
+    }
+}

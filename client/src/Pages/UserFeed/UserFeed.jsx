@@ -43,8 +43,6 @@ class UserFeed extends Component{
     }
 
     componentDidMount(){
-      document.body.style.background='#5a535aee';
-
       if(JSON.stringify(this.props.userInfo) !== JSON.stringify({})){
         this.setState({
           userInfo: this.props.userInfo
@@ -88,7 +86,7 @@ class UserFeed extends Component{
 
       fetch('/deletepost', {
         method: 'POST', 
-        headers: {'Content-Type': 'application/json',}, 
+        headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify({id: id})
       }
       ).then(response =>response.json());

@@ -5,7 +5,7 @@ class ProfileCard extends Component{
     render(){
         return(
             <div className='profileCard'>
-                <ProfileImage/>
+               <ProfileImage email={this.props.userInfo.email}/>
 
                <p>Gugsa Challa</p>
 
