@@ -4,7 +4,8 @@ const users={
     password: "varchar(50), not null",
     firstName: "varchar(50), not null",
     lastName:  "varchar(50), not null",
-    profilePic: "varchar(256)"
+    profilePic: "varchar(25)",
+    bio: "varchar(300)"
 }
 
 //foreign key (email) references users(email) on delete cascade

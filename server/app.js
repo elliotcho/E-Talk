@@ -35,8 +35,9 @@ app.use(express.static('../client/build'));
 const {
     signup,
     login,
-    handleProfilePic
-    } =require('./handlers/users');
+    handleProfilePic,
+    handleBio
+} =require('./handlers/users');
 
 const {
     getPosts,
@@ -69,5 +70,8 @@ app.post('/comments', handleComments(connection));
 
 //handle user profile pics
 app.post('/profilepic', handleProfilePic(connection, fs, path, upload));
+
+//handle user bio
+app.post('/bio', handleBio(connection));
 
 app.listen(3000);

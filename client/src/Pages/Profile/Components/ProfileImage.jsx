@@ -9,7 +9,7 @@ class ProfileImage extends Component{
 
         this.state={
             imageURL: '',
-            styleImage: {display: 'none'},
+            styleImage: {}
         }
 
         this.handleChange=this.handleChange.bind(this);
@@ -18,9 +18,7 @@ class ProfileImage extends Component{
     }
 
     componentDidMount(){
-        this.setState({
-            imageURL: ''
-        }, ()=>{
+        this.setState({}, ()=>{
             const data={
                 action: 'load',
                 email: this.props.email
@@ -72,35 +70,24 @@ class ProfileImage extends Component{
     }
 
     render(){
-        let image;
-        let styleForUpdate = {display: 'block'};
-   
-        if(this.state.imageURL!==''){
-            image=<div 
+        //<img src={this.state.imageURL} alt="Profile pic"/>
+
+        return(
+            <div className='profileImage'>
+                    <div 
                        onMouseOver={this.handleMouseOver} 
                        onMouseOut={this.handleMouseOut}
                        style={{cursor: 'pointer'}}
-                   >
+                    >
                     
                     <img src={this.state.imageURL} alt="Profile pic"/>
+                    
                     <UploadImage 
                                  content='Update' 
                                  handleChange={this.handleChange}
                                  visibility={this.state.styleImage.visibility}
                                  opacity={this.state.styleImage.opacity}
                     />
-                  </div>;
-
-            styleForUpdate={display: 'none'};
-        }
-
-        return(
-            <div className='profileImage'>
-                    {image}
-
-                    <div style={styleForUpdate}>
-                        <div className='imageContainer'/>
-                        <UploadImage content='Add Photo' handleChange={this.handleChange}/>
                     </div>
             </div>
         )

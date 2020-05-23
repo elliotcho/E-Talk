@@ -109,3 +109,30 @@ exports.handleProfilePic = (connection, fs, path, upload)=> (req, res) => {
     }
 }
 
+exports.handleBio=(connection) => (req, res) => {
+    if(req.body.action==='load'){
+        connection.query('SELECT * FROM users WHERE email =?', req.body.email, (err, rows)=>{
+            if(err){
+                console.log(err);
+            }
+
+            if(rows[0]===null){
+                res.json({msg: 'success', bio: ''});
+            }
+
+            else{
+                res.json({msg: 'success',bio: rows[0].bio});
+            }
+        });
+    }
+
+    else if(req.body.action==='save'){
+        connection.query('UPDATE users SET bio = ? WHERE email = ?', [req.body.bio, req.body.email], (err)=>{
+            if(err){
+                console.log(err);
+            }
+
+            res.json({msg: 'success'});
+        });
+    }
+}

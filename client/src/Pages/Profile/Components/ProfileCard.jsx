@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ProfileBio from './ProfileBio';
 import ProfileImage from './ProfileImage';
 
 class ProfileCard extends Component{
@@ -9,7 +10,7 @@ class ProfileCard extends Component{
 
                <p>Gugsa Challa</p>
 
-               <button className='editProfile'>Edit Profile</button>
+                <ProfileBio email={this.props.userInfo.email}/>
             </div>
         )
     }
