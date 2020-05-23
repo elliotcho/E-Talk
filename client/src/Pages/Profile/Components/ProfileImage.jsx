@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import UploadImage from './UploadImage';
 
+const axios=require('axios');
+
 class ProfileImage extends Component{
     constructor(){
         super();
@@ -28,30 +30,30 @@ class ProfileImage extends Component{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
-            }).then(response => response.json())
+            }).then(response => response.blob())
             .then(obj =>{
-                this.setState({imageURL: obj.url});
+                this.setState({imageURL: URL.createObjectURL(obj)});
             });
         });
     }
 
     handleChange(e){
+        const imgFile=e.target.files[0];
+
         this.setState({
             imageURL: URL.createObjectURL(e.target.files[0])
-        }, ()=>{
-            const data={
-                action: 'update',
-                imageFile: this.state.imageURL,
-                email: this.props.email
-            }
-
-            fetch('/profilepic', {
-               method: 'POST',
-               headers: {'Content-Type': 'application/json'},
-               body: JSON.stringify(data)
-            }).then(response => response.json());
         });
 
+        const formData=new FormData();
+
+        formData.append('email', this.props.email);
+        formData.append('image', imgFile);
+
+        const config={
+            headers:{'content-type': 'multipart/form-data'}
+        }
+
+        axios.post('/profilepic', formData, config).then(()=>"Success");
     }
 
     handleMouseOut(){
@@ -82,7 +84,7 @@ class ProfileImage extends Component{
                     
                     <img src={this.state.imageURL} alt="Profile pic"/>
                     <UploadImage 
-                                content='Update' 
+                                 content='Update' 
                                  handleChange={this.handleChange}
                                  visibility={this.state.styleImage.visibility}
                                  opacity={this.state.styleImage.opacity}

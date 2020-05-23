@@ -3,6 +3,9 @@ const mysql=require('mysql');
 const express=require('express');
 const app=express();
 const bodyParser=require('body-parser');
+const multer=require('multer');
+const fs=require('fs');
+const path=require('path');
 
 //connect with database
 const connection=mysql.createConnection({
@@ -12,6 +15,20 @@ const connection=mysql.createConnection({
     database: 'etalk'
 });
 
+//set up image storage
+const storage=multer.diskStorage({
+    destination: './images',
+    filename: (req, file, cb) => {
+        cb(null, 'IMAGE-' + Date.now()+ path.extname(file.originalname));
+    }
+});
+
+const upload=multer({
+    storage: storage,
+    limits: {fileSize: 1000000}
+}).single('image');
+
+//set up body parser and static files
 app.use(bodyParser.json());
 app.use(express.static('../client/build'));
 
@@ -50,7 +67,7 @@ app.post('/likedby', likedBy(connection));
 //handle comments
 app.post('/comments', handleComments(connection));
 
-//handle profile pic
-app.post('/profilepic', handleProfilePic(connection));
+//handle user profile pics
+app.post('/profilepic', handleProfilePic(connection, fs, path, upload));
 
 app.listen(3000);
