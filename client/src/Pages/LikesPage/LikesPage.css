@@ -1,8 +1,8 @@
-.Navbar .back{
+.Navbar .backButton{
     position: absolute;
     z-index:1;
     top: 23%;
-    left: 5%;
+    left: 7%;
     font-weight: bolder;
     font-size: 30px;
     color: white;
@@ -12,14 +12,81 @@
 .Navbar .likesHeader{
     position: relative;
     color: white;
-    font-family: 'Arial';
+    font-family: 'Nunito';
+    font-size: 20px;
     right: 20px;
     top: 25px;
 }
 
-.likesPage .user{
+.likesPage .userContainer{
+    max-width: 650px;
+    position: relative;
     padding: 20px;
     margin-bottom: 10px;
-    font-family: 'Verdana';
     background: white;
+}
+
+.likesPage img{
+    width: 100px;
+    height: 100px;
+}
+
+.likesPage p{
+    font-weight: bold;
+    color: darkblue;
+    position: absolute;
+    display: inline-block;
+    font-family: 'Nunito';
+    font-size: 20px;
+    left: 150px;
+    top: 40px;
+}
+
+@media screen and (min-width: 600px){
+    .Navbar .backButton{
+        left: 5%;
+    }
+}
+
+@media screen and (min-width: 700px){
+    .userContainer{
+        left: 3%;
+    }
+}
+
+@media screen and (min-width: 750px){
+    .userContainer{
+        left: 7%;
+    }
+}
+
+
+@media screen and (min-width: 800px){
+    .userContainer{
+        left: 12%;
+    }
+}
+
+@media screen and (min-width: 900px){
+    .userContainer{
+        left: 17%;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .userContainer{
+        left: 22%;
+    }
+}
+
+@media screen and (min-width: 1150px){
+    .userContainer{
+        left: 26%;
+    }
+}
+
+@media screen and (min-width: 1350px){
+    .userContainer{
+        left: 29%;
+    }
 }

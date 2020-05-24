@@ -125,7 +125,7 @@ exports.likedBy= (connection)=> (req, res)=>{
         if(err){
             console.log(err);
         }
-        
+
         res.json(rows);
     });
 };

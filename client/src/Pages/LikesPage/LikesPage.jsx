@@ -12,6 +12,7 @@ class LikesPage extends Component{
         }
 
         this.getUsers=this.getUsers.bind(this);
+        this.getImages=this.getImages.bind(this);
     }
 
     componentDidMount(){
@@ -42,14 +43,36 @@ class LikesPage extends Component{
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify({postId: this.state.postId})
         }).then(response => response.json())
-        .then(users =>{this.setState({list: users});});
+        .then(users =>{
+            this.setState({list: users}, ()=>{this.getImages();});
+        });
+    }
+
+    getImages(){
+        const list=this.state.list;
+
+        list.forEach(user => {
+            fetch('/profilepic', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({action: 'load', email: user.email})
+            }).then(response => response.blob())
+            .then(obj => {
+                user.imageURL=URL.createObjectURL(obj);
+                
+                this.setState({
+                    list: list
+                });
+            });
+        });
     }
 
     render(){
         const list=this.state.list.map(user =>{
             return(
-                <div className='user'>
-                    <div>{user.firstName} {user.lastName}</div>
+                <div className='userContainer'>
+                    <img src={user.imageURL} alt='Profile Pic'/>
+                    <p>{user.firstName} {user.lastName}</p>
                 </div>
             )
         });
@@ -57,7 +80,7 @@ class LikesPage extends Component{
         return(
             <div className='likesPage'>
                 <ul className='Navbar'>
-                    <li><NavLink exact to='/userfeed' className='back'>&larr;</NavLink></li>
+                    <li><NavLink exact to='/userfeed' className='backButton'>&larr;</NavLink></li>
                     <div className='likesHeader'>Post Liked By...</div>
                 </ul>
 
