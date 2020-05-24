@@ -3,8 +3,6 @@ import {withRouter} from 'react-router-dom';
 import LikeSection from './LikeSection';
 import CommentSection from './CommentSection';
 
-import pic from './default.jpg';
-
 class Post extends Component{
     constructor(){
         super();
@@ -53,21 +51,19 @@ class Post extends Component{
     
         let deleteButton;
     
-        //if(userEmail===postEmail){
+        if(userEmail===postEmail){
              deleteButton=<button className='delete' onClick={()=>{deletePost(id);}}>
                                 X
                           </button>
-        //}
+        }
 
-        //<img src={this.state.imageURL} alt='profilePic'/>
-    
         return(
             <div className='post'>
-                <img src={pic} alt='profilePic'/>
+                <img src={this.state.imageURL} alt='profilePic'/>
     
                 <div className='content'>
                     <h3 onClick={this.handleClick}>{firstName + " " + lastName}</h3>
-
+                    
                     {deleteButton}
             
                     <h5>{date.toLocaleString()}</h5>

@@ -12,32 +12,7 @@ class UserFeed extends Component{
 
       this.state={
         userInfo: {}, 
-        posts:[
-          {
-            id:1,
-            email: 'dummyemail',
-            firstName: 'dummyfirst',
-            lastName: 'dummylast',
-            date: 'dummydate',
-            content: 'dummycontentdummycontentdummycontentycontentgingerbreadmangingerbreadmanadfsffffffffffffffffffffadfadfffffffffffffffffffffffffffffffffffdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontent'
-          },
-          {
-            id: 2,
-            email: 'dummyemail',
-            firstName: 'dummyfirst',
-            lastName: 'dummylast',
-            date: 'dummydate',
-            content: 'dummycontent'
-          },
-          {
-            id: 3,
-            email: 'dummyemail',
-            firstName: 'dummyfirst',
-            lastName: 'dummylast',
-            date: 'dummydate',
-            content: 'dummycontent'
-          }
-        ]
+        posts:[]
       }
 
       this.deletePost=this.deletePost.bind(this);
