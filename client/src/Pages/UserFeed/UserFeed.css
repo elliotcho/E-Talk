@@ -41,7 +41,7 @@
     position: relative;
     margin-top: 10px;
     padding: 35px 10px;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
     background: white;
     font-family: 'Nunito';
 }
@@ -71,7 +71,7 @@
 
 .post h5{
     position: absolute;
-    top: 15%;
+    top: 10%;
     color: gray;
 }
 
@@ -79,15 +79,15 @@
     max-width: 270px;
     overflow-wrap: break-word;
     position: absolute;
-    top: 40%;
+    top: 25%;
     font-family: 'Arial';
-    font-size: 1.1em;
+    font-size: 1.0em;
 }
 
 .post .delete{
     position: absolute;
     left: 92%;
-    top: 8%;
+    top: 6%;
     border: none; 
     background: white;
     font-size: 1.3em;
@@ -139,6 +139,7 @@
 .commentSection .commentButton{
     display: inline-block;
     margin-top: 10px;
+    margin-bottom: 10px;
     position: relative;
     right: 170px;
     top: 50px;
@@ -183,6 +184,11 @@
     position: absolute;
     left: 80%;
     top: 15%;
+    cursor: auto;
+}
+
+.UserFeed .uploadImage{
+    display: none;
 }
 
 @media screen and (min-width: 700px){

@@ -53,17 +53,17 @@ class Post extends Component{
     
         let deleteButton;
     
-        if(userEmail===postEmail){
+        //if(userEmail===postEmail){
              deleteButton=<button className='delete' onClick={()=>{deletePost(id);}}>
                                 X
                           </button>
-        }
+        //}
 
         //<img src={this.state.imageURL} alt='profilePic'/>
     
         return(
             <div className='post'>
-                <img src={this.state.imageURL} alt='profilePic'/>
+                <img src={pic} alt='profilePic'/>
     
                 <div className='content'>
                     <h3 onClick={this.handleClick}>{firstName + " " + lastName}</h3>

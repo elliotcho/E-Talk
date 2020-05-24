@@ -13,13 +13,13 @@ class UserFeed extends Component{
       this.state={
         userInfo: {}, 
         posts:[
-          /*{
+          {
             id:1,
             email: 'dummyemail',
             firstName: 'dummyfirst',
             lastName: 'dummylast',
             date: 'dummydate',
-            content: 'dummycontentdummycontentdummycontentycontentdummycontent'
+            content: 'dummycontentdummycontentdummycontentycontentgingerbreadmangingerbreadmanadfsffffffffffffffffffffadfadfffffffffffffffffffffffffffffffffffdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontentdummycontent'
           },
           {
             id: 2,
@@ -36,7 +36,7 @@ class UserFeed extends Component{
             lastName: 'dummylast',
             date: 'dummydate',
             content: 'dummycontent'
-          }*/
+          }
         ]
       }
 

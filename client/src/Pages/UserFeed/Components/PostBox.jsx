@@ -51,7 +51,7 @@ class PostBox extends Component{
 
                 <form onSubmit={this.handleSubmit}>
                     <textarea minLength='1' 
-                              maxLength='60000' 
+                              maxLength='300' 
                               name='content' 
                               required={true}
                     />
