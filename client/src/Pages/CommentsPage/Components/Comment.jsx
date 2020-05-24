@@ -1,45 +1,85 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-function Comment(props){
-    let styleDelete;
+class Comment extends Component{
+    constructor(){
+        super();
 
-    if(props.userEmail === props.commentEmail){
-        styleDelete={display: 'inline'};
+        this.state={
+            imageURL: ''
+        }
     }
 
-    else{
-        styleDelete={display:'none'};
+    componentDidMount(){
+        this.setState({}, ()=>{
+            const data={
+                action: 'load',
+                email: this.props.commentEmail
+            }
+
+            fetch('/profilepic', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(response=> response.blob())
+            .then(obj =>{
+                this.setState({imageURL: URL.createObjectURL(obj)});
+            });
+        });
+    }
+    
+    deleteComment(commentId){
+        if(!window.confirm("Are you sure you want to delete this comment?")){return;}
+    
+        const data={
+            action: 'delete',
+            commentId: commentId
+        }
+    
+        fetch('./comments',{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body:JSON.stringify(data)
+        })
+        .then(()=>{window.location.reload()});
     }
 
-    return(
-        <div className='comment'>
+    
+    render(){
+        const{
+            commentId,
+            userEmail,
+            commentEmail,
+            firstName,
+            lastName,
+            date,
+            content,
+        }=this.props;
+
+        let styleDelete;
+
+        if(userEmail === commentEmail){
+            styleDelete={display: 'inline'};
+        }
+
+        else{
+            styleDelete={display:'none'};
+        }
+
+        return(
+            <div className='comment'>
+                <img src={this.state.imageURL} alt='Profile Pic'/>
             
-            <h3>{props.firstName} {props.lastName}</h3>
-            <h5>{props.date}</h5>
+                <h3>{firstName} {lastName}</h3>
+                <h5>{date}</h5>
             
-            <p>{props.content}</p>
+                <p>{content}</p>
 
-            <button style={styleDelete} className='delete' onClick={()=>handleClick(props.commentId)}> 
-                X 
-            </button>
-        </div>
-    )
-}
-
-function handleClick(commentId){
-    if(!window.confirm("Are you sure you want to delete this comment?")){return;}
-
-    const data={
-        action: 'delete',
-        commentId: commentId
+                <button style={styleDelete} className='delete' onClick={()=>this.deleteComment(commentId)}> 
+                    X 
+                </button>
+            </div>
+        )
     }
-
-    fetch('./comments',{
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body:JSON.stringify(data)
-    })
-    .then(()=>{window.location.reload()});
 }
 
 export default Comment;

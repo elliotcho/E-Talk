@@ -2,7 +2,7 @@
     position: absolute;
     z-index:1;
     top: 23%;
-    left: 5%;
+    left: 7%;
     font-weight: bolder;
     font-size: 30px;
     color: white;
@@ -13,17 +13,28 @@
 .Navbar .commentsHeader{
     position: relative;
     color: white;
-    font-family: 'Arial';
+    font-family: 'Nunito';
+    font-size: 20px;
     right: 20px;
     top: 25px;
 }
 
+.commentsPage .nocomments{
+    position: relative;
+    left: 27%;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Nunito';
+    color: lightslategray;
+}
+
 .commentsPage textarea{
-    position: absolute;
+    position: fixed;
+    max-width: 600px;
     width: 90%;
     height: 70px;
     left: 5%;
-    top: 85%;
+    top: 88%;
     font-size: 18px;
     font-family: 'Segoe UI';
     resize: none;
@@ -31,44 +42,60 @@
 }
 
 .comment{
+    max-width: 650px;
     position: relative;
-    height: 150px;
+    height: 300px;
     margin-top: 10px;
-    padding: 5px;
+    padding: 10px;
     background: beige;
     font-family: 'Nunito';
 }
 
+.comment:last-child{
+    margin-bottom: 100px;
+}
+
+.comment img{
+    width: 150px;
+    height: 150px;
+}
+
 .comment h3{
     position: absolute;
-    display: inline;
+    display: inline-block;
+    top: 0;
+    margin-left: 5px;
+    left: 165px;
     color: darkblue;
 }
 
 .comment h5{
     position: absolute;
-    top: 25%;
-    display: inline;
-    margin-left: 2px;
+    display: inline-block;
+    margin-left: 5px;
+    top: 30px;
+    left: 165px;
     font-family: 'Arial';
     color: gray;
 }
 
 .comment p{
     position: absolute;
-    margin-left: 1px;
-    max-width: 90%;
-    top: 65%;
-    font-family: 'Arial';
-    margin-bottom: 5px;  
+    margin-left: 5px;
+    max-width: 290px;
+    overflow-wrap: break-word;
+    display: inline-block;
+    left: 165px;
+    top: 60px;
+    font-family: 'Arial'; 
 }
 
 .comment .delete{
     position: absolute;
-    top: 12%;
+    top: 5%;
     left: 92%;
     border: none;
-    font-size: 20px;
+    font-size: 1.3em;
     font-weight:bolder;
     font-family: 'Trebuchet MS';
     color: red;
@@ -81,4 +108,109 @@
     box-shadow: 0 0 5px lightgray;
 }
 
+@media screen and (min-width: 500px){
+    .commentsPage .nocomments{
+        left: 29%;
+    }
+}
 
+@media screen and (min-width: 600px){
+    .Navbar .backButton{
+        left: 5%;
+    }
+    
+    .commentsPage .nocomments{
+        left: 31%;
+    }
+}
+
+@media screen and (min-width: 700px){
+    .commentsPage .nocomments{
+        left: 33%;
+    }
+
+    .comment{
+        left: 1%;
+    }
+
+    .commentsPage textarea{
+        left: 7%;
+    }
+}
+
+@media screen and (min-width: 750px){
+    .commentsPage .nocomments{
+        left: 35%;
+    }
+
+    .comment{
+        left: 5%;
+    }
+
+    .commentsPage textarea{
+        left: 10%;
+    }
+}
+
+
+@media screen and (min-width: 800px){
+    .commentsPage .nocomments{
+        left: 38%;
+    }
+
+    .comment{
+        left: 10%;
+    }
+
+    .commentsPage textarea{
+        left: 15%;
+    }
+}
+
+@media screen and (min-width: 900px){
+    .commentsPage .nocomments{
+        left: 40%;
+    }
+
+    .comment{
+        left: 15%;
+    }
+
+    .commentsPage textarea{
+        left: 18%;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .comment{
+        left: 20%;
+    }
+
+    .commentsPage textarea{
+        left: 23%;
+    }
+}
+
+@media screen and (min-width: 1150px){
+    .comment{
+        left: 24%;
+    }
+
+    .commentsPage textarea{
+        left: 26%;
+    }
+}
+
+@media screen and (min-width: 1350px){
+    .commentsPage .nocomments{
+        left: 42%;
+    }
+
+    .comment{
+        left: 27%;
+    }
+
+    .commentsPage textarea{
+        left: 29.5%;
+    }
+}

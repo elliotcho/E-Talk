@@ -121,17 +121,17 @@ class CommentsPage extends Component{
                     <div className='commentsHeader'>Comments</div>
                 </ul>
 
-                {comments}
-
                 <form ref={element => this.myComment=element} onSubmit={this.handleSubmit}>
                     <textarea
                         minLength='1' 
-                        maxLength='8000' 
+                        maxLength='300' 
                         name='content' 
                         required={true}
                         onKeyDown={this.pressEnter}
                     />
                 </form>
+
+                {comments.length!==0? comments: <p className='nocomments'>No comments available</p>}
             </div>
         )
     }

@@ -15,7 +15,7 @@ const posts={
     firstName: "varchar(50), not null",
     lastName:  "varchar(50), not null",
     date: "datetime, not null",
-    content: "text(300) not null"
+    content: "varchar(300) not null"
 }
 
 //foreign key(postId) references posts(id) on delete cascade
@@ -35,5 +35,5 @@ const comments={
     firstName: "varchar(50) not null",
     lastName: "varchar(50) not null",
     date: "date datetime NOT NULL",
-    content: "text(8000) not null"
+    content: "varchar(300) not null"
 }
