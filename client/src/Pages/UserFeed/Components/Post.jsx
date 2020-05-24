@@ -33,7 +33,13 @@ class Post extends Component{
     }
 
     handleClick(){
-
+        this.props.history.push({
+            pathname: '/profile',
+            state:{
+                postId: this.props.id,
+                userEmail: this.props.userEmail,
+            }
+        });
     }
 
  

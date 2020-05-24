@@ -36,6 +36,15 @@
     box-shadow: 0 0 10px black;
 }
 
+.UserFeed .noposts{
+    position: relative;
+    left: 20%;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Nunito';
+    color: lightslategray;
+}
+
 .post{
     max-width: 550px;
     position: relative;
@@ -191,6 +200,13 @@ img{
     display: none;
 }
 
+@media screen and (min-width: 600px){
+    .UserFeed .noposts{
+        left: 22%;
+    }
+}
+
+
 @media screen and (min-width: 700px){
     .postBox{
         left: 4%;
@@ -200,11 +216,19 @@ img{
         visibility: visible;
         left: 90%;
     }
+
+    .UserFeed .noposts{
+        left: 20%;
+    }
 }
 
 @media screen and (min-width: 800px){
     .postBox{
         left: 3%;
+    }
+
+    .UserFeed .noposts{
+        left: 16%;
     }
 
     .UserFeed .profileCard{
@@ -219,6 +243,10 @@ img{
         left: 2%;
     }
 
+    .UserFeed .noposts{
+        left: 14%;
+    }
+
     .UserFeed .profileCard{
         left: 70%;
     }
@@ -228,10 +256,25 @@ img{
     .UserFeed .profileCard{
         left: 65%;
     }
+
+    .UserFeed .noposts{
+        left: 12%;
+    }
 }
 
 @media screen and (min-width: 1250px){
     .UserFeed .profileCard{
         left: 55%;
+    }
+
+    .UserFeed .noposts{
+        left: 10%;
+    }
+}
+
+
+@media screen and (min-width: 1350px){
+    .UserFeed .noposts{
+        left: 8%;
     }
 }

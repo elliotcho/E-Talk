@@ -93,7 +93,7 @@ class UserFeed extends Component{
 
             <br/>
 
-            {posts}
+            {posts.length!==0? posts : <p className='noposts'>There are no posts available</p>}
 
             <ProfileCard userInfo={this.state.userInfo} className='profileCard'/>
           </div>

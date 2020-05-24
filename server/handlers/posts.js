@@ -1,4 +1,4 @@
-//get posts
+//get all posts
 exports.getPosts=(connection) => (req, res)=>{
     connection.query('SELECT * FROM posts ORDER BY date DESC', (err, rows)=>{
         if(err){
@@ -6,6 +6,21 @@ exports.getPosts=(connection) => (req, res)=>{
         }
 
         rows.forEach(row=>{
+            row.date=row.date.toLocaleString();
+        });
+
+        res.json(rows);
+    });
+};
+
+//get all posts made by a certain user
+exports.getUserPosts =(connection) => (req, res) =>{
+    connection.query('SELECT * FROM posts WHERE email =? ORDER BY date DESC', req.body.email, (err, rows)=>{
+        if(err){
+            console.log(err);
+        }
+
+        rows.forEach(row =>{
             row.date=row.date.toLocaleString();
         });
 
@@ -144,7 +159,7 @@ exports.handleComments=(connection)=> (req,res )=>{
 
     //commenting on a post
     else if(req.body.action==='comment'){
-        connection.query('SELECT * FROM USERS WHERE email = ?', req.body.userEmail,(err, rows)=>{
+        connection.query('SELECT * FROM users WHERE email = ?', req.body.userEmail,(err, rows)=>{
             const newComment={
                 postId: req.body.postId,
                 email: rows[0].email,

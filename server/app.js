@@ -41,6 +41,7 @@ const {
 
 const {
     getPosts,
+    getUserPosts,
     createPost,
     deletePost,
     handleLikes,
@@ -58,6 +59,7 @@ app.post('/login', login(connection));
 
 //server response to user posts
 app.post('/getposts', getPosts(connection));
+app.post('/userposts', getUserPosts(connection));
 app.post('/createpost', createPost(connection));
 app.post('/deletepost', deletePost(connection));
 

@@ -26,7 +26,7 @@ class CommentSection extends Component{
         .then(obj => {this.setState({numComments: obj.total})});
     }
 
-    handleClick(e){
+    handleClick(){
         this.props.history.push({
             pathname: '/comments',
             state:{
