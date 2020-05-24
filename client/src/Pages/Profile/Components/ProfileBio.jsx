@@ -40,7 +40,7 @@ class ProfileBio extends Component{
     handleClick(e){
         const {name}=e.target;
 
-        const {textareaContent}=this.state;
+        const {textareaContent, bioContent}=this.state;
 
         if(name==='edit'){
             this.setState({
@@ -49,6 +49,7 @@ class ProfileBio extends Component{
                 textareaStyle: {display: 'block'},
                 cancelStyle: {display: 'inline-block'},
                 saveStyle: {display: 'inline-block'},
+                textareaContent: bioContent
             });
         }
 
@@ -59,7 +60,7 @@ class ProfileBio extends Component{
                 textareaStyle: {display: 'none'},
                 cancelStyle: {display: 'none'},
                 saveStyle: {display: 'none'},
-                textareaContent: ''
+                textareaContent: bioContent
             });
         }
 
