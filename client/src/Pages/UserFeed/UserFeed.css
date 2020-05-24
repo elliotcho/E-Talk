@@ -1,4 +1,5 @@
 .postBox{
+    max-width: 550px;
     position: relative;
     left: 5%;
 }
@@ -12,7 +13,6 @@
     width: 90%;
     height: 100px;
     display: block;
-    overflow-y: scroll;
     resize:none;
     font-size: 18px;
     font-family: 'Segoe UI';
@@ -37,36 +37,62 @@
 }
 
 .post{
+    max-width: 550px;
     position: relative;
     margin-top: 10px;
-    padding: 10px;
+    padding: 35px 10px;
     margin-bottom: 50px;
     background: white;
     font-family: 'Nunito';
 }
 
+.post .pic, img{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.post .content{
+    display: inline-block;
+    padding: 20px;
+}
+
 .post h3{
+    position: absolute;
+    top: 0%;
     color: darkblue;
+    cursor: pointer;
+}
+
+.post h3:hover{
+    box-shadow: 0 0 5px black;
 }
 
 .post h5{
+    position: absolute;
+    top: 15%;
     color: gray;
 }
 
 .post p{
+    max-width: 270px;
+    overflow-wrap: break-word;
+    position: absolute;
+    top: 40%;
     font-family: 'Arial';
     font-size: 1.1em;
 }
 
 .post .delete{
     position: absolute;
-    left: 90%;
-    top: 17%;
+    left: 92%;
+    top: 8%;
     border: none; 
     background: white;
-    font-size: 1.1em;
-    font-weight:bolder;
+    font-size: 1.3em;
     font-family: 'Trebuchet MS';
+    font-weight: bolder;
     color: red;
     outline: none;
     cursor: pointer;
@@ -81,8 +107,9 @@
 }
 
 .likeSection .like{
-    position: absolute;
-    bottom: 5%;
+    position: relative;
+    top: 55px;
+    right: 175px;
     width: 20px;
     height: 20px;
     font-size: 15px;
@@ -93,9 +120,10 @@
 }
 
 .likeSection .likesMsg{
-    position: absolute;
-    bottom: 5%;
-    left: 8%;
+    position: relative;
+    display: inline-block;
+    top: 55px;
+    right: 170px;
     font-size: 14px;
     font-family: 'Segoe UI';
 }
@@ -109,9 +137,11 @@
 }
 
 .commentSection .commentButton{
-    position: absolute;
-    left: 20%;
-    bottom: 5%;
+    display: inline-block;
+    margin-top: 10px;
+    position: relative;
+    right: 170px;
+    top: 50px;
     font-size: 14px;
     font-family: 'Segoe UI';
     background: white;
@@ -124,7 +154,6 @@
 .commentSection .commentButton:hover{
     box-shadow: 0 0 5px lightgray;
 }
-
 
 .commentSection .commentCount{
     position: absolute;
@@ -147,4 +176,56 @@
 
 .commentSection .commentsListLink:hover{
     color: gray;
+}
+
+.UserFeed .profileCard{
+    visibility: hidden;
+    position: absolute;
+    left: 80%;
+    top: 15%;
+}
+
+@media screen and (min-width: 700px){
+    .postBox{
+        left: 4%;
+    }
+
+    .UserFeed .profileCard{
+        visibility: visible;
+        left: 90%;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .postBox{
+        left: 3%;
+    }
+
+    .UserFeed .profileCard{
+        visibility: visible;
+        left: 80%;
+    }
+}
+
+
+@media screen and (min-width: 900px){
+    .postBox{
+        left: 2%;
+    }
+
+    .UserFeed .profileCard{
+        left: 70%;
+    }
+}
+
+@media screen and (min-width: 1050px){
+    .UserFeed .profileCard{
+        left: 65%;
+    }
+}
+
+@media screen and (min-width: 1250px){
+    .UserFeed .profileCard{
+        left: 55%;
+    }
 }

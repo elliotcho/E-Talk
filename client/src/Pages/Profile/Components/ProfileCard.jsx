@@ -1,19 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ProfileBio from './ProfileBio';
 import ProfileImage from './ProfileImage';
 
-class ProfileCard extends Component{
-    render(){
+function ProfileCard(props){
+        const {
+            firstName, 
+            lastName, 
+            email
+        } =props.userInfo;
+
         return(
             <div className='profileCard'>
-               <ProfileImage email={this.props.userInfo.email}/>
+               <ProfileImage email={email}/>
 
-               <p>Gugsa Challa</p>
+               <p>{firstName} {lastName}</p>
 
-                <ProfileBio email={this.props.userInfo.email}/>
+                <ProfileBio email={email}/>
             </div>
         )
-    }
 }
 
 export default ProfileCard;

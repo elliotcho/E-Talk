@@ -1,44 +1,90 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom';
 import LikeSection from './LikeSection';
 import CommentSection from './CommentSection';
 
-function Post(props){
-    const {
-        id, 
-        userEmail, 
-        postEmail, 
-        firstName, 
-        lastName, 
-        date, 
-        content, 
-        deletePost
-    } = props;
+import pic from './default.jpg';
 
-    let deleteButton;
+class Post extends Component{
+    constructor(){
+        super();
 
-    if(userEmail===postEmail){
-         deleteButton=<button className='delete' onClick={()=>{deletePost(id);}}>
-                            X
-                      </button>
+        this.state={
+            imageURL: ''
+        }
+
+        this.handleClick=this.handleClick.bind(this);
     }
 
-    return(
-        <div className='post'>
-            <h3>{firstName + " " + lastName} {deleteButton}</h3>
+    componentDidMount(){
+        this.setState({}, ()=>{
+            const data={
+                action: 'load',
+                email: this.props.postEmail
+            }
+
+            fetch('/profilepic', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(response=> response.blob())
+            .then(obj =>{
+                this.setState({imageURL: URL.createObjectURL(obj)});
+            });
+        });
+    }
+
+    handleClick(){
+
+    }
+
+ 
+    render(){
+        const {
+            id, 
+            userEmail, 
+            postEmail, 
+            firstName, 
+            lastName, 
+            date, 
+            content, 
+            deletePost
+        } = this.props;
     
-            <h5>{date.toLocaleString()}</h5>
-                
-            <p>{content}</p> 
+        let deleteButton;
+    
+        if(userEmail===postEmail){
+             deleteButton=<button className='delete' onClick={()=>{deletePost(id);}}>
+                                X
+                          </button>
+        }
 
-            <LikeSection id={id} userEmail={userEmail}/> 
+        //<img src={this.state.imageURL} alt='profilePic'/>
+    
+        return(
+            <div className='post'>
+                <img src={this.state.imageURL} alt='profilePic'/>
+    
+                <div className='content'>
+                    <h3 onClick={this.handleClick}>{firstName + " " + lastName}</h3>
 
-            <CommentSection id={id} 
-                            userEmail={userEmail} 
-                            firstName={firstName}
-                            lastName={lastName}
-            />
-        </div>
-    )
+                    {deleteButton}
+            
+                    <h5>{date.toLocaleString()}</h5>
+                        
+                    <p>{content}</p> 
+    
+                    <LikeSection id={id} userEmail={userEmail}/> 
+    
+                    <CommentSection id={id} 
+                                    userEmail={userEmail} 
+                                    firstName={firstName}
+                                    lastName={lastName}
+                    />
+                </div>
+            </div>
+        )
+    }
 }
 
-export default Post;
+export default withRouter(Post);

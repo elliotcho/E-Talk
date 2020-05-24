@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PostBox from './Components/PostBox'
 import Post from './Components/Post';
+import ProfileCard from '../Profile/Components/ProfileCard'
 import './UserFeed.css'
 
 import {NavLink} from 'react-router-dom';
@@ -18,7 +19,7 @@ class UserFeed extends Component{
             firstName: 'dummyfirst',
             lastName: 'dummylast',
             date: 'dummydate',
-            content: 'dummycontent'
+            content: 'dummycontentdummycontentdummycontentycontentdummycontent'
           },
           {
             id: 2,
@@ -118,6 +119,8 @@ class UserFeed extends Component{
             <br/>
 
             {posts}
+
+            <ProfileCard userInfo={this.state.userInfo} className='profileCard'/>
           </div>
       )
     }
