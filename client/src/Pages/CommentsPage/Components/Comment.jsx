@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom';
 
 class Comment extends Component{
     constructor(){
@@ -7,6 +8,8 @@ class Comment extends Component{
         this.state={
             imageURL: ''
         }
+
+        this.goToProfile=this.goToProfile.bind(this);
     }
 
     componentDidMount(){
@@ -43,6 +46,17 @@ class Comment extends Component{
         .then(()=>{window.location.reload()});
     }
 
+    goToProfile(){
+        this.props.history.push({
+            pathname: '/profile',
+            state: {
+                profileEmail: this.props.commentEmail,
+                userEmail: this.props.userEmail,
+                firstName: this.props.firstName,
+                lastName: this.props.lastName
+            }
+        });
+    }
     
     render(){
         const{
@@ -69,7 +83,7 @@ class Comment extends Component{
             <div className='comment'>
                 <img src={this.state.imageURL} alt='Profile Pic'/>
             
-                <h3>{firstName} {lastName}</h3>
+                <h3 onClick={this.goToProfile}>{firstName} {lastName}</h3>
                 <h5>{date}</h5>
             
                 <p>{content}</p>
@@ -82,4 +96,4 @@ class Comment extends Component{
     }
 }
 
-export default Comment;
+export default withRouter(Comment);

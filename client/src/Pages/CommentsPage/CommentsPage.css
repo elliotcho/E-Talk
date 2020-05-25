@@ -46,6 +46,11 @@
     margin-left: 5px;
     left: 165px;
     color: darkblue;
+    cursor: pointer;
+}
+
+.comment h3:hover{
+    box-shadow: 0 0 5px black;
 }
 
 .comment h5{

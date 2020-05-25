@@ -70,7 +70,7 @@ class LikeSection extends Component{
     }
 
     render(){
-        const {id} =this.props;
+        const {id, userEmail} =this.props;
 
         let {numLikes}=this.state;
         let likesMsg="";
@@ -88,7 +88,7 @@ class LikeSection extends Component{
                 </button> 
 
                 <div className='likesMsg' style={{cursor: likeCursor}}>    
-                    {(likesMsg==="") ? null : <NavLink exact to={{pathname: '/likedby', postId: id}} className='likedByLink'>
+                    {(likesMsg==="") ? null : <NavLink className='likedByLink' exact to={{pathname: '/likedby', postId: id, userEmail: userEmail}}>
                                                     {likesMsg}
                                               </NavLink> 
                     }

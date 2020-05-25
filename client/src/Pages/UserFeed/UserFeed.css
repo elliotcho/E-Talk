@@ -55,6 +55,10 @@
     font-family: 'Nunito';
 }
 
+.post:last-child{
+    margin-bottom: 70px;
+}
+
 img{
     display: inline-block;
     width: 150px;
@@ -227,11 +231,15 @@ img{
 
 @media screen and (min-width: 800px){
     .postBox{
-        left: 3%;
+        left: 6%;
     }
 
     .UserFeed .noposts{
         left: 16%;
+    }
+
+    .post{
+        margin-left: 20px;
     }
 
     .UserFeed .profileCard{
@@ -242,10 +250,6 @@ img{
 
 
 @media screen and (min-width: 900px){
-    .postBox{
-        left: 2%;
-    }
-
     .UserFeed .noposts{
         left: 14%;
     }
@@ -256,6 +260,10 @@ img{
 }
 
 @media screen and (min-width: 1050px){
+    .postBox{
+        left: 4%;
+    }
+
     .UserFeed .profileCard{
         left: 65%;
     }
@@ -266,6 +274,10 @@ img{
 }
 
 @media screen and (min-width: 1250px){
+    .postBox{
+        left: 3%;
+    }
+
     .UserFeed .profileCard{
         left: 55%;
     }

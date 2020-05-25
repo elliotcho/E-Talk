@@ -9,19 +9,22 @@ class LikesPage extends Component{
         
         this.state={
             postId: -1,
+            userEmail: '',
             list:[]
         }
 
         this.getUsers=this.getUsers.bind(this);
         this.getImages=this.getImages.bind(this);
+        this.goToProfile=this.goToProfile.bind(this);
     }
 
     componentDidMount(){
-        const {postId}=this.props.location;
+        const {postId, userEmail}=this.props.location;
 
         if(typeof postId!== 'undefined'){
             this.setState({
-                postId: postId
+                postId: postId,
+                userEmail: userEmail
             }, ()=>{
                 window.localStorage.setItem('postId', this.state.postId);
                 this.getUsers();
@@ -68,12 +71,27 @@ class LikesPage extends Component{
         });
     }
 
+    goToProfile(profile){
+        this.props.history.push({
+            pathname: '/profile',
+            state:{
+                userEmail: this.state.userEmail,
+                profileEmail: profile.email,
+                firstName: profile.firstName,
+                lastName: profile.lastName
+            }
+        });
+    }
+
     render(){
         const list=this.state.list.map(user =>{
             return(
                 <div className='userContainer'>
                     <img src={user.imageURL} alt='Profile Pic'/>
-                    <p>{user.firstName} {user.lastName}</p>
+                    
+                    <p onClick={()=>{this.goToProfile(user)}}>
+                        {user.firstName} {user.lastName}
+                    </p>
                 </div>
             )
         });

@@ -90,8 +90,6 @@ class UserFeed extends Component{
 
             <br/>
 
-            {posts.length!==0? posts : <p className='noposts'>There are no posts available</p>}
-
             <ProfileCard 
                     profileInfo={
                       {userEmail: this.state.userInfo.email,
@@ -101,6 +99,8 @@ class UserFeed extends Component{
                       }
                     } 
             />
+
+            {posts.length!==0? posts : <p className='noposts'>There are no posts available</p>}
           </div>
       )
     }
