@@ -60,7 +60,7 @@ class ProfileImage extends Component{
         });
     }
 
-    handleMouseOver(e){
+    handleMouseOver(){
         this.setState({
             styleImage:{
                 visibility: 'visible',
@@ -70,20 +70,37 @@ class ProfileImage extends Component{
     }
 
     render(){
+        const {
+            profileEmail,
+            userEmail
+        }=this.props;
+
+        let mouseOut, mouseOver, cursorStyle;
+
+        let updateVisibility='hidden';
+
+        if(profileEmail===userEmail){
+            mouseOver=this.handleMouseOver;
+            mouseOut=this.handleMouseOut;
+            cursorStyle={cursor: 'pointer'}
+            updateVisibility=this.state.styleImage.visibility;
+        }
+
         return(
             <div className='profileImage'>
                     <div 
-                       onMouseOver={this.handleMouseOver} 
-                       onMouseOut={this.handleMouseOut}
-                       style={{cursor: 'pointer'}}
+                       onMouseOver={mouseOver} 
+                       onMouseOut={mouseOut}
+                       style={cursorStyle}
                     >
                     
                     <img src={this.state.imageURL} alt="Profile pic"/>
                     
                     <UploadImage 
+                                 style={{display: 'none'}}
                                  content='Update' 
                                  handleChange={this.handleChange}
-                                 visibility={this.state.styleImage.visibility}
+                                 visibility={updateVisibility}
                                  opacity={this.state.styleImage.opacity}
                     />
                     </div>

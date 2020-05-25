@@ -6,16 +6,17 @@ function ProfileCard(props){
         const {
             firstName, 
             lastName, 
-            profileEmail
+            profileEmail,
+            userEmail
         } =props.profileInfo;
 
         return(
             <div className='profileCard'>
-               <ProfileImage profileEmail={profileEmail}/>
+               <ProfileImage profileEmail={profileEmail} userEmail={userEmail}/>
 
                 <p>{firstName} {lastName}</p>
 
-                <ProfileBio profileEmail={profileEmail}/>
+                <ProfileBio profileEmail={profileEmail} userEmail={userEmail}/>
             </div>
         )
 }

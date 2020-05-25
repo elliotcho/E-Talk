@@ -98,12 +98,19 @@ class ProfileBio extends Component{
     }
 
     render(){
+        const {
+            profileEmail,
+            userEmail
+        }=this.props;
+
+        const hideBio= (profileEmail===userEmail)? this.state.editStyle: {display: 'none'}; 
+
         return(
             <div className='profileBio'>
                 <button className='editProfile' 
                         name='edit' 
                         onClick={this.handleClick} 
-                        style={this.state.editStyle}>
+                        style={hideBio}>
                         Edit Profile
                 </button>
         
