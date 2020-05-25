@@ -6,7 +6,7 @@
     background:white;
 }
 
-.profileImage img, .test{
+.profileImage img{
     position:relative;
     left: 10%;
     width: 300px;

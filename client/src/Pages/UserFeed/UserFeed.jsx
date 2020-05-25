@@ -69,7 +69,7 @@ class UserFeed extends Component{
     render(){
       const posts=this.state.posts.map(post=>
           <Post 
-                key={post.id}
+                key={post.id}  
                 id={post.id}
                 userEmail={this.state.userInfo.email}
                 postEmail={post.email}
@@ -92,14 +92,14 @@ class UserFeed extends Component{
 
             {posts.length!==0? posts : <p className='noposts'>There are no posts available</p>}
 
-            <ProfileCard profileInfo={
-                            {userEmail: this.state.userInfo.email,
-                             profileEmail: this.state.userInfo.email,
-                             firstName: this.state.userInfo.firstName,
-                             lastName: this.state.userInfo.lastName
-                            }
-                        } 
-                         className='profileCard'
+            <ProfileCard 
+                    profileInfo={
+                      {userEmail: this.state.userInfo.email,
+                       profileEmail: this.state.userInfo.email,
+                       firstName: this.state.userInfo.firstName,
+                       lastName: this.state.userInfo.lastName
+                      }
+                    } 
             />
           </div>
       )

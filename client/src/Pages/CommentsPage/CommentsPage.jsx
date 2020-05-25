@@ -7,6 +7,7 @@ import './CommentsPage.css';
 class CommentsPage extends Component{
     constructor(){
         super();
+        
         this.state={
             postId: -1,
             userEmail: "",

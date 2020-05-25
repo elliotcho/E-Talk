@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom';
 import ProfileCard from './Components/ProfileCard';
 import './Profile.css';
 
@@ -16,18 +17,11 @@ class Profile extends Component{
 
     componentDidMount(){
       if(typeof this.props.location.state!== 'undefined'){
-          const {
-            profileEmail,
-            userEmail,
-            firstName, 
-            lastName
-          }=this.props.location.state;
-
           this.setState({
-              profileEmail: profileEmail,
-              userEmail: userEmail,
-              firstName: firstName,
-              lastName: lastName
+              profileEmail: this.props.location.state.profileEmail,
+              userEmail: this.props.location.state.userEmail,
+              firstName: this.props.location.state.firstName,
+              lastName: this.props.location.state.lastName
           }, ()=>{
               window.localStorage.setItem('profile', JSON.stringify(this.state));
           });
@@ -54,4 +48,4 @@ class Profile extends Component{
     }
 }
 
-export default Profile;
+export default withRouter(Profile);

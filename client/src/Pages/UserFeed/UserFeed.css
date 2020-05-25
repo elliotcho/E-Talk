@@ -193,6 +193,9 @@ img{
     position: absolute;
     left: 80%;
     top: 15%;
+}
+
+.UserFeed .profileImage img{
     cursor: auto;
 }
 
