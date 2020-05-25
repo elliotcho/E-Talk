@@ -21,7 +21,7 @@ class ProfileImage extends Component{
         this.setState({}, ()=>{
             const data={
                 action: 'load',
-                email: this.props.email
+                email: this.props.profileEmail
             }
 
             fetch('/profilepic', {
@@ -44,7 +44,7 @@ class ProfileImage extends Component{
 
         const formData=new FormData();
 
-        formData.append('email', this.props.email);
+        formData.append('email', this.props.profileEmail);
         formData.append('image', imgFile);
 
         const config={
@@ -70,8 +70,6 @@ class ProfileImage extends Component{
     }
 
     render(){
-        //<img src={this.state.imageURL} alt="Profile pic"/>
-
         return(
             <div className='profileImage'>
                     <div 

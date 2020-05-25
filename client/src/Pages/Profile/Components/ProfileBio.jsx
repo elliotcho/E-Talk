@@ -22,7 +22,7 @@ class ProfileBio extends Component{
         this.setState({}, ()=>{
             const data={
                 action: 'load',
-                email: this.props.email
+                email: this.props.profileEmail
             }
     
             fetch('/bio',{
@@ -75,7 +75,7 @@ class ProfileBio extends Component{
             },  () =>{
                 const data={
                     action: 'save',
-                    email: this.props.email,
+                    email: this.props.profileEmail,
                     bio: this.state.bioContent
                 };
     

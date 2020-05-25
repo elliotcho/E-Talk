@@ -36,8 +36,10 @@ class Post extends Component{
         this.props.history.push({
             pathname: '/profile',
             state:{
-                postId: this.props.id,
                 userEmail: this.props.userEmail,
+                profileEmail: this.props.postEmail,
+                firstName: this.props.firstName,
+                lastName: this.props.lastName
             }
         });
     }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {NavLink, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
+import BackNavbar from '../Navbars/BackNavbar';
 import './LikesPage.css';
 
 class LikesPage extends Component{
@@ -79,11 +80,7 @@ class LikesPage extends Component{
 
         return(
             <div className='likesPage'>
-                <ul className='Navbar'>
-                    <li><NavLink exact to='/userfeed' className='backButton'>&larr;</NavLink></li>
-                    <div className='likesHeader'>Post Liked By...</div>
-                </ul>
-
+                <BackNavbar title='Post Liked By...'/>
                 {list}
             </div>
         )

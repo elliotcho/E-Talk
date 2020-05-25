@@ -4,8 +4,6 @@ import Post from './Components/Post';
 import ProfileCard from '../Profile/Components/ProfileCard'
 import './UserFeed.css'
 
-import {NavLink} from 'react-router-dom';
-
 class UserFeed extends Component{
     constructor(){
       super();
@@ -86,7 +84,6 @@ class UserFeed extends Component{
       return(
           <div className='UserFeed'>
             <ul className='Navbar'>
-              <NavLink exact to='/profile'>Profile</NavLink>
             </ul>
 
             <PostBox userInfo={this.state.userInfo}/>
@@ -95,7 +92,15 @@ class UserFeed extends Component{
 
             {posts.length!==0? posts : <p className='noposts'>There are no posts available</p>}
 
-            <ProfileCard userInfo={this.state.userInfo} className='profileCard'/>
+            <ProfileCard profileInfo={
+                            {userEmail: this.state.userInfo.email,
+                             profileEmail: this.state.userInfo.email,
+                             firstName: this.state.userInfo.firstName,
+                             lastName: this.state.userInfo.lastName
+                            }
+                        } 
+                         className='profileCard'
+            />
           </div>
       )
     }

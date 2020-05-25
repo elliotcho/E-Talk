@@ -1,24 +1,3 @@
-.Navbar .backButton{
-    position: absolute;
-    z-index:1;
-    top: 23%;
-    left: 7%;
-    font-weight: bolder;
-    font-size: 30px;
-    color: white;
-    text-decoration: none;
-}
-
-
-.Navbar .commentsHeader{
-    position: relative;
-    color: white;
-    font-family: 'Nunito';
-    font-size: 20px;
-    right: 20px;
-    top: 25px;
-}
-
 .commentsPage .nocomments{
     position: relative;
     left: 27%;
@@ -114,11 +93,7 @@
     }
 }
 
-@media screen and (min-width: 600px){
-    .Navbar .backButton{
-        left: 5%;
-    }
-    
+@media screen and (min-width: 600px){    
     .commentsPage .nocomments{
         left: 31%;
     }

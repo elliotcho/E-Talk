@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {NavLink, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
+import BackNavbar from '../Navbars/BackNavbar';
 import Comment from './Components/Comment';
 import './CommentsPage.css';
 
@@ -21,20 +22,18 @@ class CommentsPage extends Component{
         if(typeof this.props.location.state!== 'undefined'){
             this.setState({
                 postId: this.props.location.state.postId,
-                userEmail: this.props.location.state.userEmail,
-                firstName: this.props.location.state.firstName,
-                lastName: this.props.location.state.lastName
+                userEmail: this.props.location.state.userEmail
             }, ()=>{
-                window.localStorage.setItem('info', JSON.stringify(this.state));
+                window.localStorage.setItem('comments', JSON.stringify(this.state));
                 this.getComments();
             });
         }
 
         else{
             this.setState({
-                ...JSON.parse(window.localStorage.getItem('info')),
+                ...JSON.parse(window.localStorage.getItem('comments')),
             }, ()=>{
-                window.localStorage.setItem('info', JSON.stringify(this.state));
+                window.localStorage.setItem('comments', JSON.stringify(this.state));
                 this.getComments();
             });
         }
@@ -116,10 +115,7 @@ class CommentsPage extends Component{
 
         return(
             <div className='commentsPage'>
-                <ul className='Navbar'>
-                    <li><NavLink exact to='/userfeed' className='backButton'>&larr;</NavLink></li>
-                    <div className='commentsHeader'>Comments</div>
-                </ul>
+                <BackNavbar title='Comments'/>
 
                 <form ref={element => this.myComment=element} onSubmit={this.handleSubmit}>
                     <textarea
