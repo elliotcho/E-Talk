@@ -1,8 +1,9 @@
 .profileCard{
     position: relative;
-    left: 5%;
+    left: 3%;
     width: 400px;
     padding: 50px 20px;
+    margin-bottom: 50px;
     background:white;
 }
 
@@ -105,4 +106,134 @@
     left: 33%;
     bottom: 20px;
     background: #6262b4;
+}
+
+.Profile .noposts{
+    position: relative;
+    left: 18%;
+    font-size: 22px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-family: 'Nunito';
+    color: lightslategray;
+}
+
+@media screen and (min-width: 515px){
+    .profileCard{
+        left: 5%;
+    }
+}
+
+@media screen and (min-width: 570px){
+    .profileCard{
+        left: 10%;
+    }
+
+    .Profile .noposts{
+        left: 21%;
+    }
+}
+
+@media screen and (min-width: 620px){
+    .profileCard{
+        left: 14%;
+    }
+
+    .Profile .noposts{
+        left: 26%;
+    }
+
+    .Profile .post{
+        left: 3%;
+    }
+}
+
+@media screen and (min-width: 670px){
+    .Profile .post{
+        left: 4%;
+    }
+}
+
+@media screen and (min-width: 705px){
+    .profileCard{
+        left: 17%;
+    }
+
+    .Profile .noposts{
+        left: 30%;
+    }
+
+    .Profile .post{
+        left: 8%;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .profileCard{
+        left: 21%;
+    }
+
+    .Profile .noposts{
+        left: 32%;
+    }
+
+    .Profile .post{
+        left: 11%;
+    }
+}
+
+@media screen and (min-width: 900px){
+    .profileCard{
+        left: 25%;
+    }
+
+    .Profile .noposts{
+        left: 34%;
+    }
+
+    .Profile .post{
+        left: 16%;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .profileCard{
+        left: 28%;
+    }
+
+    .Profile .noposts{
+        left: 36%;
+    }
+
+    .Profile .post{
+        left: 20%;
+    }
+}
+
+@media screen and (min-width: 1100px){
+    .profileCard{
+        left: 33%;
+    }
+
+    .Profile .noposts{
+        left: 39%;
+    }
+
+    .Profile .post{
+        left: 26%;
+    }
+}
+
+@media screen and (min-width: 1250px){
+    .profileCard{
+        left: 35%;
+    }
+
+    .Profile .noposts{
+        left: 40%;
+    }
+
+    .Profile .post{
+        left: 30%;
+    }
 }
