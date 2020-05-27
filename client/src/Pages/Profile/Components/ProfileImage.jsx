@@ -51,7 +51,7 @@ class ProfileImage extends Component{
             headers:{'content-type': 'multipart/form-data'}
         }
 
-        axios.post('/profilepic', formData, config).then(()=>"Success");
+        axios.post('/profilepic', formData, config).then(()=>{window.location.reload();});
     }
 
     handleMouseOut(){

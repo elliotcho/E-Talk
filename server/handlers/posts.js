@@ -160,6 +160,10 @@ exports.handleComments=(connection)=> (req,res )=>{
     //commenting on a post
     else if(req.body.action==='comment'){
         connection.query('SELECT * FROM users WHERE email = ?', req.body.userEmail,(err, rows)=>{
+            if(err){
+                console.log(err);
+            }
+
             const newComment={
                 postId: req.body.postId,
                 email: rows[0].email,

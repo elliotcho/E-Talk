@@ -199,14 +199,6 @@ img{
     top: 15%;
 }
 
-.UserFeed .profileImage img{
-    cursor: auto;
-}
-
-.UserFeed .uploadImage{
-    display: none;
-}
-
 @media screen and (min-width: 600px){
     .UserFeed .noposts{
         left: 22%;

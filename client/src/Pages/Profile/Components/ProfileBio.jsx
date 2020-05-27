@@ -103,14 +103,14 @@ class ProfileBio extends Component{
             userEmail
         }=this.props;
 
-        const hideBio= (profileEmail===userEmail)? this.state.editStyle: {display: 'none'}; 
+        const hideEdit= (profileEmail===userEmail)? this.state.editStyle: {display: 'none'}; 
 
         return(
             <div className='profileBio'>
                 <button className='editProfile' 
                         name='edit' 
                         onClick={this.handleClick} 
-                        style={hideBio}>
+                        style={hideEdit}>
                         Edit Profile
                 </button>
         
@@ -124,7 +124,7 @@ class ProfileBio extends Component{
                          style={this.state.textareaStyle}
                          value={this.state.textareaContent}
                          minLength='1'
-                         maxLength='50'
+                         maxLength='300'
                />
 
                <button className='cancelButton' 

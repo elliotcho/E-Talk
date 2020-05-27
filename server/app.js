@@ -36,7 +36,8 @@ const {
     signup,
     login,
     handleProfilePic,
-    handleBio
+    getUserProfile,
+    handleBio, 
 } =require('./handlers/users');
 
 const {

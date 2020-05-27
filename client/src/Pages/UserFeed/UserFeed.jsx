@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import MainNavbar from '../Navbars/MainNavbar';
 import PostBox from './Components/PostBox'
 import Post from './Components/Post';
 import ProfileCard from '../Profile/Components/ProfileCard'
@@ -83,8 +84,7 @@ class UserFeed extends Component{
 
       return(
           <div className='UserFeed'>
-            <ul className='Navbar'>
-            </ul>
+            <MainNavbar email={this.state.userInfo.email}/>
 
             <PostBox userInfo={this.state.userInfo}/>
 

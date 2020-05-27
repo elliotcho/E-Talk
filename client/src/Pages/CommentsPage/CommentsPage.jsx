@@ -14,9 +14,9 @@ class CommentsPage extends Component{
             list:[]
         }
 
-        this.handleSubmit=this.handleSubmit.bind(this);
         this.getComments=this.getComments.bind(this);
         this.pressEnter=this.pressEnter.bind(this);
+        this.handleSubmit=this.handleSubmit.bind(this);
     }
 
     componentDidMount(){
@@ -40,7 +40,6 @@ class CommentsPage extends Component{
         }
     }
 
-    
     getComments(){
         const data={
             action: 'get',

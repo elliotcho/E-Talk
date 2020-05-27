@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
+import MainNavbar from '../Navbars/MainNavbar';
 import ProfileCard from './Components/ProfileCard';
 import './Profile.css';
 
@@ -39,8 +40,8 @@ class Profile extends Component{
     render(){
         return(
             <div>
-                <ul className='Navbar'>
-                </ul>
+                <MainNavbar email={this.state.userEmail}
+                />
 
                 <ProfileCard profileInfo={this.state}/>
             </div>

@@ -9,13 +9,28 @@
     text-align: center;
 }
 
-.EntryNavbar li{
+.LoginNavbar li{
     width: 25%;
     display: inline-block;
     margin-right: 90px;
     margin-top: 20px;
     font-weight: bold;
     font-family:'Nunito';
+}
+
+.MainNavbar li{
+    width: 25%;
+    display: inline-block;
+    margin-right: 90px;
+    margin-top: 20px;
+    font-family: 'Nunito';
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.MainNavbar li:hover{
+    text-decoration: underline;
 }
 
 .BackNavbar .backButton{
