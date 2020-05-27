@@ -124,7 +124,7 @@ class ProfileBio extends Component{
                          style={this.state.textareaStyle}
                          value={this.state.textareaContent}
                          minLength='1'
-                         maxLength='300'
+                         maxLength='50'
                />
 
                <button className='cancelButton' 
