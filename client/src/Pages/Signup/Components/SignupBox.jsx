@@ -37,7 +37,7 @@ class SignupBox extends Component{
             lastName: this.state.lastName
         }
 
-        fetch('/signup', {
+        fetch('http://localhost:5000/signup', {
             method: 'POST', 
             headers: {
               'Content-Type': 'application/json'},

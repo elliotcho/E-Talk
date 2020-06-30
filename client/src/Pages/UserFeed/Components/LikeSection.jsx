@@ -21,7 +21,7 @@ class LikeSection extends Component{
             userEmail: this.props.userEmail
         }
 
-        fetch('/handlelikes', {
+        fetch('http://localhost:5000/handlelikes', {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify(data)
@@ -62,7 +62,7 @@ class LikeSection extends Component{
             userEmail: this.props.userEmail
         }
 
-        fetch('/handlelikes', {
+        fetch('http://localhost:5000/handlelikes', {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data)

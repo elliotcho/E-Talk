@@ -24,7 +24,7 @@ class ProfileImage extends Component{
                 email: this.props.profileEmail
             }
 
-            fetch('/profilepic', {
+            fetch('http://localhost:5000/profilepic', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
@@ -51,7 +51,7 @@ class ProfileImage extends Component{
             headers:{'content-type': 'multipart/form-data'}
         }
 
-        axios.post('/profilepic', formData, config).then(()=>{window.location.reload();});
+        axios.post('http://localhost:5000/profilepic', formData, config).then(()=>{window.location.reload();});
     }
 
     handleMouseOut(){

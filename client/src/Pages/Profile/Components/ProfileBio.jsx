@@ -25,7 +25,7 @@ class ProfileBio extends Component{
                 email: this.props.profileEmail
             }
     
-            fetch('/bio',{
+            fetch('http://localhost:5000/bio',{
                 method: 'POST',
                 headers:{'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
@@ -79,7 +79,7 @@ class ProfileBio extends Component{
                     bio: this.state.bioContent
                 };
     
-                fetch('/bio',{
+                fetch('http://localhost:5000/bio',{
                     method: 'POST',
                     headers:{'Content-Type': 'application/json'},
                     body: JSON.stringify(data)

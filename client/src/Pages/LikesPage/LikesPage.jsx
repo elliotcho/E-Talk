@@ -42,7 +42,7 @@ class LikesPage extends Component{
     }
 
     getUsers(){
-        fetch('/likedby', {
+        fetch('http://localhost:5000/likedby', {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify({postId: this.state.postId})
@@ -56,7 +56,7 @@ class LikesPage extends Component{
         const list=this.state.list;
 
         list.forEach(user => {
-            fetch('/profilepic', {
+            fetch('http://localhost:5000/profilepic', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({action: 'load', email: user.email})

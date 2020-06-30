@@ -21,7 +21,7 @@ class Post extends Component{
                 email: this.props.postEmail
             }
 
-            fetch('/profilepic', {
+            fetch('http://localhost:5000/profilepic', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)

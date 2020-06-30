@@ -46,7 +46,7 @@ class CommentsPage extends Component{
             postId: this.state.postId
         }
 
-        fetch('/comments', {
+        fetch('http://localhost:5000/comments', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify(data)
@@ -84,7 +84,7 @@ class CommentsPage extends Component{
             content: content
         }
 
-        fetch('/comments', {
+        fetch('http://localhost:5000/comments', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify(data)

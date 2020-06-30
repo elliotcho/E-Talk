@@ -45,7 +45,7 @@ class Profile extends Component{
     }
 
     getPosts(){
-        fetch('/userposts', {
+        fetch('http://localhost:5000/userposts', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email: this.state.profileEmail})
@@ -69,7 +69,7 @@ class Profile extends Component{
     
           this.setState({posts: posts});
     
-          fetch('/deletepost', {
+          fetch('http://localhost:5000/deletepost', {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify({id: id})

@@ -1,11 +1,12 @@
 //require third party modules
 const mysql=require('mysql');
-const express=require('express');
-const app=express();
 const bodyParser=require('body-parser');
 const multer=require('multer');
 const fs=require('fs');
 const path=require('path');
+const cors=require('cors');
+const express=require('express');
+const app=express();
 
 //connect with database
 const connection=mysql.createConnection({
@@ -25,18 +26,16 @@ const storage=multer.diskStorage({
 
 const upload=multer({
     storage: storage,
-    limits: {fileSize: 1000000}
+    limits: {fileSize: 1000000000}
 }).single('image');
 
-//set up body parser and static files
 app.use(bodyParser.json());
-app.use(express.static('../client/build'));
+app.use(cors());
 
 const {
     signup,
     login,
     handleProfilePic,
-    getUserProfile,
     handleBio, 
 } =require('./handlers/users');
 
@@ -49,10 +48,6 @@ const {
     likedBy,
     handleComments
 } =require('./handlers/posts');
-
-app.get('/', (req, res)=>{
-    res.sendFile('../client/build/index.html');
-});
 
 //server response to user entry
 app.post('/signup', signup(connection));
@@ -77,4 +72,4 @@ app.post('/profilepic', handleProfilePic(connection, fs, path, upload));
 //handle user bio
 app.post('/bio', handleBio(connection));
 
-app.listen(3000);
+app.listen(5000);

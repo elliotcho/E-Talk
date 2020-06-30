@@ -36,7 +36,7 @@ class PostBox extends Component{
             content: content,
         }
   
-        fetch('/createpost', {
+        fetch('http://localhost:5000/createpost', {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data),

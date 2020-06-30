@@ -19,7 +19,7 @@ class Comment extends Component{
                 email: this.props.commentEmail
             }
 
-            fetch('/profilepic', {
+            fetch('http://localhost:5000/profilepic', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
@@ -38,7 +38,7 @@ class Comment extends Component{
             commentId: commentId
         }
     
-        fetch('./comments',{
+        fetch('http://localhost:5000/comments',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify(data)

@@ -34,7 +34,7 @@ class UserFeed extends Component{
         });
       }
     
-      fetch('/getposts', {
+      fetch('http://localhost:5000/getposts', {
         method: 'POST', 
         headers: {'Content-Type': 'application/json'}
       }
@@ -59,7 +59,7 @@ class UserFeed extends Component{
 
       this.setState({posts: posts});
 
-      fetch('/deletepost', {
+      fetch('http://localhost:5000/deletepost', {
         method: 'POST', 
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify({id: id})
