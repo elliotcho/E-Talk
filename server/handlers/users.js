@@ -11,7 +11,6 @@ exports.login= (connection) => (req, res)=>{
             res.json({
                 msg: 'success',
                 email: user.email,
-                password: user.password,
                 firstName: user.firstName,
                 lastName: user.lastName
             });

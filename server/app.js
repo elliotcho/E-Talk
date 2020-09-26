@@ -1,4 +1,5 @@
 //require third party modules
+require('dotenv').config();
 const mysql=require('mysql');
 const bodyParser=require('body-parser');
 const multer=require('multer');
@@ -10,10 +11,10 @@ const app=express();
 
 //connect with database
 const connection=mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'password2615!',
-    database: 'etalk'
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 });
 
 //set up image storage
